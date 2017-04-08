@@ -1,0 +1,6 @@
+.sass-cache
+.zip
+
+design/
+dist/
+node_modules/
