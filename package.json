@@ -10,5 +10,8 @@
     "gulp-sourcemaps": "^2.5.1",
     "gulp-uglify": "^2.1.2",
     "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {
+    "node-static": "^0.7.9"
   }
 }

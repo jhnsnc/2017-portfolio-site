@@ -29,8 +29,8 @@ const sourceDir = 'src';
 const destDir = 'dist';
 
 const config = {
-  cssSrcDir: sourceDir + '/scss',
-  jsSrcDir: sourceDir + '/js',
+  cssSrcDir: `${sourceDir}/scss`,
+  jsSrcDir: `${sourceDir}/js`,
   autoprefixer: {
     browsers: ['> 1%', 'last 2 versions'],
     cascade: true,
@@ -43,12 +43,13 @@ const config = {
  */
 
 gulp.task('build', (cb) => {
-  runSequence('clean', ['styles', 'scripts'], cb);
+  runSequence('clean', ['styles', 'scripts', 'copy-html'], cb);
 });
 
 gulp.task('watch', ['build'], () => {
-  gulp.watch(config.cssSrcDir + '/**/*.*', ['styles']);
-  gulp.watch(config.jsSrcDir + '/**/*.*', ['scripts']);
+  gulp.watch(`${config.cssSrcDir}/**/*.*`, ['styles']);
+  gulp.watch(`${config.jsSrcDir}/**/*.*`, ['scripts']);
+  gulp.watch(`${sourceDir}/**/*.html`, ['copy-html']);
 });
 
 gulp.task('deploy', () => {
@@ -57,13 +58,9 @@ gulp.task('deploy', () => {
 });
 
 gulp.task('default', () => {
-  console.log('');
-  console.log('To do a basic build, run \"gulp build\"');
-  console.log('');
-  console.log('To build and rebuild on changes, run \"gulp watch\"');
-  console.log('');
-  console.log('To build for production, run \"gulp deploy\"');
-  console.log('');
+  console.log('\n','To do a basic build, run \"gulp build\"');
+  console.log('\n','To build and rebuild on changes, run \"gulp watch\"');
+  console.log('\n','To build for production, run \"gulp deploy\"','\n');
 });
 
 /**
@@ -75,10 +72,10 @@ gulp.task('clean', () => {
 });
 
 gulp.task('styles', () => {
-  const files = config.cssSrcDir + '/**/main.scss';
+  const files = `${config.cssSrcDir}/**/main.scss`;
 
   const sassOptions = {
-    outputStyle: (env === 'dev') ? 'nested' : 'compressed'
+    outputStyle: (env === 'dev') ? 'nested' : 'compressed',
   };
 
   return gulp.src(files)
@@ -86,27 +83,34 @@ gulp.task('styles', () => {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(gulpif(env === 'dev', sourcemaps.write('maps')))
-    .pipe(gulp.dest(destDir + '/css'));
+    .pipe(gulp.dest(`${destDir}/css`));
 });
 
 gulp.task('scripts', () => {
   const files = [
-    config.jsSrcDir + '/**/*.js'
+    `${config.jsSrcDir}/**/*.js`,
   ];
 
   const uglifyOptions = {
     compress: {
-      'drop_console': true
+      'drop_console': true,
     }
   };
 
   const outputFilename = 'app.js';
 
   return gulp.src(files)
-    .pipe(newer(destDir + 'js/' + outputFilename))
+    .pipe(newer(`${destDir}/js/${outputFilename}`))
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat(outputFilename))
     .pipe(gulpif(env === 'dev', sourcemaps.write('maps')))
     .pipe(gulpif(env === 'prod', uglify(uglifyOptions)))
-    .pipe(gulp.dest(destDir + '/js'));
+    .pipe(gulp.dest(`${destDir}/js`));
+});
+
+gulp.task('copy-html', () => {
+  const files = `${sourceDir}/**/*.html`;
+
+  return gulp.src(files)
+    .pipe(gulp.dest(destDir));
 });
