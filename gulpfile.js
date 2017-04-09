@@ -28,15 +28,8 @@ const gulpif = require('gulp-if');
 const sourceDir = 'src';
 const destDir = 'dist';
 
-const config = {
-  cssSrcDir: `${sourceDir}/scss`,
-  jsSrcDir: `${sourceDir}/js`,
-  autoprefixer: {
-    browsers: ['> 1%', 'last 2 versions'],
-    cascade: true,
-    remove: true
-  }
-};
+const cssSourceDir = `${sourceDir}/scss`;
+const jsSourceDir = `${sourceDir}/js`;
 
 /**
  * Primary Tasks
@@ -47,8 +40,8 @@ gulp.task('build', (cb) => {
 });
 
 gulp.task('watch', ['build'], () => {
-  gulp.watch(`${config.cssSrcDir}/**/*.*`, ['styles']);
-  gulp.watch(`${config.jsSrcDir}/**/*.*`, ['scripts']);
+  gulp.watch(`${cssSourceDir}/**/*.*`, ['styles']);
+  gulp.watch(`${jsSourceDir}/**/*.*`, ['scripts']);
   gulp.watch(`${sourceDir}/**/*.html`, ['copy-html']);
 });
 
@@ -72,23 +65,31 @@ gulp.task('clean', () => {
 });
 
 gulp.task('styles', () => {
-  const files = `${config.cssSrcDir}/**/main.scss`;
+  const files = `${cssSourceDir}/**/main.scss`;
 
   const sassOptions = {
+    includePaths: [
+      cssSourceDir,
+      'node_modules'
+    ],
     outputStyle: (env === 'dev') ? 'nested' : 'compressed',
   };
 
   return gulp.src(files)
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(autoprefixer(config.autoprefixer))
+    .pipe(autoprefixer({
+      browsers: ['> 1%', 'last 2 versions'],
+      cascade: true,
+      remove: true,
+    }))
     .pipe(gulpif(env === 'dev', sourcemaps.write('maps')))
     .pipe(gulp.dest(`${destDir}/css`));
 });
 
 gulp.task('scripts', () => {
   const files = [
-    `${config.jsSrcDir}/**/*.js`,
+    `${jsSourceDir}/**/*.js`,
   ];
 
   const uglifyOptions = {
