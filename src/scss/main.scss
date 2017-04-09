@@ -1,4 +1,15 @@
-body {
-  background: #121318;
-  color: #ffffff;
-}
+@import 'reset.css/reset';
+
+@import 'internal/global';
+@import 'internal/variables';
+@import 'internal/colors';
+
+@import 'components/portfolio-section';
+
+@import 'sections/intro';
+@import 'sections/quotes';
+@import 'sections/skills';
+@import 'sections/work';
+@import 'sections/contact';
+
+@import 'temp';

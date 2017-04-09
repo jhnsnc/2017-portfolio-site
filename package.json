@@ -9,6 +9,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.5.1",
     "gulp-uglify": "^2.1.2",
+    "reset.css": "^2.0.2",
     "run-sequence": "^1.2.2"
   },
   "devDependencies": {
