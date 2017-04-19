@@ -36,12 +36,13 @@ const jsSourceDir = `${sourceDir}/js`;
  */
 
 gulp.task('build', (cb) => {
-  runSequence('clean', ['styles', 'scripts', 'copy-html'], cb);
+  runSequence('clean', ['styles', 'scripts', 'copy-images', 'copy-html'], cb);
 });
 
 gulp.task('watch', ['build'], () => {
   gulp.watch(`${cssSourceDir}/**/*.*`, ['styles']);
   gulp.watch(`${jsSourceDir}/**/*.*`, ['scripts']);
+  gulp.watch(`${sourceDir}/**/*.png`, ['copy-images']);
   gulp.watch(`${sourceDir}/**/*.html`, ['copy-html']);
 });
 
@@ -89,6 +90,9 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   const files = [
+    `${jsSourceDir}/stats.js`,
+    `${jsSourceDir}/intro.js`,
+    `${jsSourceDir}/skills.js`,
     `${jsSourceDir}/**/*.js`,
   ];
 
@@ -107,6 +111,13 @@ gulp.task('scripts', () => {
     .pipe(gulpif(env === 'dev', sourcemaps.write('maps')))
     .pipe(gulpif(env === 'prod', uglify(uglifyOptions)))
     .pipe(gulp.dest(`${destDir}/js`));
+});
+
+gulp.task('copy-images', () => {
+  const files = `${sourceDir}/**/*.png`;
+
+  return gulp.src(files)
+    .pipe(gulp.dest(destDir));
 });
 
 gulp.task('copy-html', () => {
