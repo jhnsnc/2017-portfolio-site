@@ -1,10 +1,13 @@
 .portfolio-section {
   position: relative;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
 
 .portfolio-section__base-content {
+  z-index: 2;
+  position: relative;
   width: 94%;
   padding: 2.5rem 0;
   margin: 0 auto;
@@ -21,11 +24,6 @@
   @include breakpoint(XL) {
     width: 1740px;
   }
-}
-
-.portfolio-section__reveal-content {
-  display: none;
-  padding: 1rem;
 }
 
 .portfolio-section__heading {

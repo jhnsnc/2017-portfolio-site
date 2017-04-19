@@ -1,1 +1,1 @@
-console.log('Main setup');
+console.log('HELLO');
