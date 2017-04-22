@@ -1,4 +1,6 @@
-(function showStats() {
+import * as Stats from 'stats';
+
+export function showStats() {
   // stats
   var stats = new Stats();
   stats.domElement.style.position = 'fixed';
@@ -10,4 +12,4 @@
     stats.update();
     requestAnimationFrame(updateStats);
   });
-})();
+}
