@@ -1,8 +1,6 @@
 // have to include SCSS so it shows up in webpack
 require('scss/main.scss');
 
-require('images/scratch2.png'); // FOOBAR
-
 import { showStats } from './misc/stats';
 
 import { setupIntroSection } from './sections/intro';

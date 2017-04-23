@@ -4,7 +4,11 @@
 @import 'internal/variables';
 @import 'internal/colors';
 
+@import 'components/portfolio-nav';
 @import 'components/portfolio-section';
+@import 'components/webgl-scene';
+@import 'components/intro-title';
+@import 'components/section-heading';
 
 @import 'sections/intro';
 @import 'sections/about';
@@ -12,5 +16,3 @@
 @import 'sections/work';
 @import 'sections/quotes';
 @import 'sections/contact';
-
-@import 'temp';

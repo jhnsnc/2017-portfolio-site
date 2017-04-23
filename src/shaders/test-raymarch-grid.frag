@@ -1,10 +1,10 @@
 #extension GL_OES_standard_derivatives : enable
 
-uniform float time;
-uniform vec2 resolution;
+uniform float iGlobalTime;
+uniform vec2 iResolution;
 
 #define PI 3.14159265359
-#define T (time/5.)
+#define T (iGlobalTime/5.)
 
 float terrain( float x, float z ) {
   return 0.4 * sin(x) * sin(2.*z+T);
@@ -59,16 +59,16 @@ vec3 terrainColor(vec3 ro, vec3 rd, float t)
 vec3 skyColor(float fragY)
 {
   return vec3(0.);
-  return mix(vec3(1.,.84314,.25098), vec3(0.,0.,0.), 0.5 + 0.5 * pow(fragY / resolution.y, 2.));
+  return mix(vec3(1.,.84314,.25098), vec3(0.,0.,0.), 0.5 + 0.5 * pow(fragY / iResolution.y, 2.));
 }
 
 void main ()
 {
-  float aspect = resolution.x / resolution.y;
+  float aspect = iResolution.x / iResolution.y;
   const float hfov = 85.0 * 0.5 * PI / 180.;
   const float tanhfov = tan(hfov);
 
-  vec2 uv = gl_FragCoord.xy / resolution.xy * 2. - vec2(1., 1.);
+  vec2 uv = gl_FragCoord.xy / iResolution.xy * 2. - vec2(1., 1.);
   float dx = tanhfov * uv.x / aspect;
   float dy = tanhfov * uv.y - 0.45;
 

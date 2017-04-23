@@ -1,12 +1,12 @@
-uniform float time;
-uniform vec2 resolution;
+uniform float iGlobalTime;
+uniform vec2 iResolution;
 
-uniform sampler2D texture;
+uniform sampler2D iChannel0;
 
 varying vec2 vUv;
 
 #define PI 3.14159265359
-#define T (time*0.5)
+#define T (iGlobalTime*0.5)
 
 // Sineless hash - Dave Hoskins ( https://www.shadertoy.com/view/4djSRW )
 // License: CC BY-SA v4.0 (this function only)
@@ -45,8 +45,8 @@ void calcPattern(out float value, out vec3 color, vec2 p, float t, float overlay
 }
 
 void main( void ) {
-  vec2 texCoord = vec2(gl_FragCoord.x / resolution.y * 800. / 534., gl_FragCoord.y / resolution.y);
-  vec4 texCol = (texCoord.x <= 1. && texCoord.y <= 1.) ? texture2D(texture, texCoord) : vec4(0.);
+  vec2 texCoord = vec2(gl_FragCoord.x / iResolution.y * 800. / 534., gl_FragCoord.y / iResolution.y);
+  vec4 texCol = (texCoord.x <= 1. && texCoord.y <= 1.) ? texture2D(iChannel0, texCoord) : vec4(0.);
 
   // vec3 gradColor = cosPal((vUv.x * 0.4) + (vUv.y * 1.2));
 

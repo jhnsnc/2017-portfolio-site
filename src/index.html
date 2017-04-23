@@ -24,46 +24,89 @@
 </head>
 <body>
 
+  <!-- Nav -->
+  <nav class="portfolio-nav">
+    <a class="portfolio-nav__link" href="#about">About</a>
+    <a class="portfolio-nav__link" href="#skills">Skills</a>
+    <a class="portfolio-nav__link" href="#work">Work</a>
+    <a class="portfolio-nav__link" href="#quotes">Quotes</a>
+    <a class="portfolio-nav__link" href="#contact">Contact</a>
+  </nav>
+
   <!-- Intro -->
   <section id="intro" class="portfolio-section">
-    <div class="portfolio-section__base-content">
-      <h1 class="portfolio-section__heading">Hi, I&rsquo;m Chris&nbsp;Johnson</h1>
-      <p>I&rsquo;m a person and sometimes I do stuff. This is filler text until I decide what I want to say here. More filler text. Now we&rsquo;re done!</p>
-    </div>
+    <h1 class="intro-title">
+      <svg class="intro-title__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="bigglow">
+            <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="5"></feGaussianBlur>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.5" intercept="0"></feFuncA>
+            </feComponentTransfer>
+            <feFlood flood-color="#ffeebb" flood-opacity="0.6" />
+            <feComposite result="glow" in2="blur" operator="in" />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="smallglow" x="-0.2" y="-2.5" width="1.4" height="6.0">
+            <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="1.5" intercept="0"></feFuncA>
+            </feComponentTransfer>
+            <feFlood flood-color="#ffeebb" flood-opacity="0.6" />
+            <feComposite result="glow" in2="blur" operator="in" />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <linearGradient id="gradient" color-interpolation="sRGB" spreadMethod="repeat" x1="0" x2="0" y1="0" y2="1">
+            <stop stop-color="#f8f8ff" offset="0%"></stop>
+            <stop stop-color="#babeee" offset="80%"></stop>
+            <stop stop-color="#ffffff" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+        <text id="textName" x="400" y="150" text-anchor="middle" fill="url(#gradient)" filter="url(#bigglow)">Chris Johnson</text>
+        <rect x="10" y="190" width="780" height="3" fill="url(#gradient)" filter="url(#smallglow)"></rect>
+        <text id="textTitle" x="400" y="265" text-anchor="middle" fill="url(#gradient)" filter="url(#smallglow)">Interactive Front-End Developer</text>
+      </svg>
+    </h1>
   </section>
 
   <!-- About -->
   <section id="about" class="portfolio-section">
     <div class="portfolio-section__base-content">
-      <h2 class="portfolio-section__heading">About</h2>
+      <h2 class="section-heading">About</h2>
     </div>
   </section>
 
   <!-- Skills -->
   <section id="skills" class="portfolio-section">
     <div class="portfolio-section__base-content">
-      <h2 class="portfolio-section__heading">Skills</h2>
+      <h2 class="section-heading">Skills</h2>
     </div>
   </section>
 
   <!-- Work -->
   <section id="work" class="portfolio-section">
     <div class="portfolio-section__base-content">
-      <h2 class="portfolio-section__heading">Work</h2>
+      <h2 class="section-heading">Work</h2>
     </div>
   </section>
 
   <!-- Quotes -->
   <section id="quotes" class="portfolio-section">
     <div class="portfolio-section__base-content">
-      <h2 class="portfolio-section__heading">Quotes</h2>
+      <h2 class="section-heading">Quotes</h2>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="portfolio-section">
     <div class="portfolio-section__base-content">
-      <h2 class="portfolio-section__heading">Contact</h2>
+      <h2 class="section-heading">Contact</h2>
       <p><strong>Phone:</strong> (817)239-1309</p>
       <p><strong>Email:</strong> jhnsn.c@gmail.com</p>
       <p><strong>Twitter:</strong> <a href="https://twitter.com/jhnsnc" target="_blank">@jhnsnc</a></p>
