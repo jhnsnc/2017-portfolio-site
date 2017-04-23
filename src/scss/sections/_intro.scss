@@ -1,12 +1,6 @@
 #intro {
   background: #000;
 
-  .webgl-render-canvas {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
   .portfolio-section__heading {
     text-shadow: $headingShadowDisplacement md-color('amber','600');
   }

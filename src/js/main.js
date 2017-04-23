@@ -1,18 +1,19 @@
-require('scss/main.scss'); // FOOBAR
-require('images/scratch.png'); // FOOBAR
+// have to include SCSS so it shows up in webpack
+require('scss/main.scss');
+
 require('images/scratch2.png'); // FOOBAR
 
-console.log('MEOW'); // FOOBAR
+import { showStats } from './misc/stats';
 
-import { showStats } from './misc/stats.js';
-
-import { setupIntroSection } from './sections/intro.js';
-import { setupSkillsSection } from './sections/skills.js';
+import { setupIntroSection } from './sections/intro';
+import { setupAboutSection } from './sections/about';
+import { setupSkillsSection } from './sections/skills';
 
 function runApp() {
   showStats();
 
   setupIntroSection();
+  setupAboutSection();
   setupSkillsSection();
 }
 

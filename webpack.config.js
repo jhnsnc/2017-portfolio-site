@@ -51,8 +51,12 @@ module.exports = {
 
       // GLSL shaders
       {
-        test: /\.(vert|v|frag|f)$/,
+        test: /\.(glsl|vert|v|frag|f)$/,
         loader: 'raw-loader'
+      },
+      {
+        test: /\.(glsl|vert|v|frag|f)$/,
+        loader: 'ify-loader'
       },
 
       // SCSS
