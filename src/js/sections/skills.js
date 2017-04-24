@@ -5,9 +5,17 @@ import { setupWebglScene } from '../webgl-utils/setup';
 export function setupSkillsSection() {
   console.log('Setup: SKILLS');
 
-  setupWebglScene(
-    document.getElementById( 'skills' ), // container
-    require('shaders/passthru.vert'), // vertex shader
-    require('shaders/test-just-noise.frag'), // fragment shader
-  );
+  // setupWebglScene({
+  //   container: document.getElementById( 'skills' ),
+  //   vertexShader: require('shaders/passthru.vert'),
+  //   fragmentShader: require('shaders/test-just-noise.frag'),
+  //   animate: true,
+  // });
+
+  setupWebglScene({
+    container: document.getElementById( 'skills' ),
+    vertexShader: require('shaders/passthru-vuv.vert'),
+    fragmentShader: require('shaders/light-background.frag'),
+    animate: false,
+  });
 }

@@ -2,14 +2,16 @@
 
 import * as THREE from 'THREE';
 
-export function setupWebglScene(container, vertexShader, fragmentShader, textures) {
+export function setupWebglScene(options) {
+  options = options || {};
+
   let isPaused;
   let lastUpdate;
   let camera, scene, renderer;
   let uniforms;
 
   function init() {
-    isPaused = false;
+    isPaused = !options.animate;
 
     // basic setup
     camera = new THREE.Camera();
@@ -22,7 +24,7 @@ export function setupWebglScene(container, vertexShader, fragmentShader, texture
       iGlobalTime: { type: 'f', value: 1.0 },
       iResolution: { type: 'v2', value: new THREE.Vector2() },
     };
-    (textures || []).forEach((texture, i) => {
+    (options.textures || []).forEach((texture, i) => {
       // TODO: maybe run some sanity/safety checks on textures first
       uniforms[`iChannel${i}`] = { type: 't', value: texture };
       // uniforms[`iChannelResolution${i}`] = ???; // TODO: add texture resolutions
@@ -31,8 +33,8 @@ export function setupWebglScene(container, vertexShader, fragmentShader, texture
     // shader setup
     const material = new THREE.ShaderMaterial( {
       uniforms,
-      vertexShader,
-      fragmentShader,
+      vertexShader: options.vertexShader,
+      fragmentShader: options.fragmentShader,
     } );
     lastUpdate = new Date().getTime();
 
@@ -41,17 +43,19 @@ export function setupWebglScene(container, vertexShader, fragmentShader, texture
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.domElement.classList.add('webgl-scene');
-    container.appendChild( renderer.domElement );
+    options.container.appendChild( renderer.domElement );
 
     // event listeners
     onResize();
     window.addEventListener( 'resize', onResize, false); // TODO: debounce me?
-    container.addEventListener('click', togglePause); // TODO: remove me in favor of autostart/stop
+    if (options.animate) {
+      options.container.addEventListener('click', togglePause); // TODO: remove me in favor of autostart/stop
+    }
   }
 
   // events
   function onResize(evt) {
-    renderer.setSize( container.getBoundingClientRect().width, container.getBoundingClientRect().height );
+    renderer.setSize( options.container.getBoundingClientRect().width, options.container.getBoundingClientRect().height );
     uniforms.iResolution.value.x = renderer.domElement.width;
     uniforms.iResolution.value.y = renderer.domElement.height;
     progressRender(0);

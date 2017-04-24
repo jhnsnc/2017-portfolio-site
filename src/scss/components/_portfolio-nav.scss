@@ -31,4 +31,7 @@
     color: md-color('purple','a100');
     background: rgba(black, 0.6);
   }
+  &:focus {
+    outline-color: md-color('purple','a100');
+  }
 }
