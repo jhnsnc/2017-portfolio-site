@@ -7,7 +7,9 @@ export function setupWebglScene(options) {
 
   let isPaused;
   let lastUpdate;
-  let camera, scene, renderer;
+  let camera;
+  let scene;
+  let renderer;
   let uniforms;
 
   function init() {
