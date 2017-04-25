@@ -1,0 +1,25 @@
+.contact-links__container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.contact-links__logo {
+  width: 6.0rem;
+  height: 6.0rem;
+  transition: all 300ms;
+}
+
+.contact-links__link {
+  flex: 0 0;
+  text-decoration: none;
+  padding: 2.0rem;
+  margin: 0 2.0rem;
+
+  &:hover, &:focus {
+    .contact-links__logo {
+      transform: scale(1.2);
+      fill: md-color('purple','a100');
+    }
+  }
+}
