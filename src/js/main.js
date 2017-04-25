@@ -15,10 +15,10 @@ function runApp() {
 
   setupIntroSection();
   setupAboutSection();
-  setupSkillsSection();
-  setupWorkSection();
-  setupQuotesSection();
-  setupContactSection();
+  // setupSkillsSection();
+  // setupWorkSection();
+  // setupQuotesSection();
+  // setupContactSection();
 }
 
 runApp();

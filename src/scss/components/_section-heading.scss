@@ -1,9 +1,12 @@
 .section-heading {
-  padding: 0 0 1.5rem;
+  padding: 0 0 3.5rem;
   margin: 4rem 0 0;
-  color: #ffffff;
-  font-family: sans-serif;
+  color: #f8f8ff;
+  font-family: $oswald;
   font-size: 7.5rem;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
 }

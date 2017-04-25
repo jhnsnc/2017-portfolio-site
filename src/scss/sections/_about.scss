@@ -2,6 +2,36 @@
   background: #222;
 
   .section-heading {
-    text-shadow: $headingShadowDisplacement md-color('pink','600');
+    color: md-color('pink','600');
+    text-shadow: 0 0 2.0rem md-color('pink','200');
+  }
+
+  .portfolio-section__base-content {
+    @include breakpoint(S) {
+      padding-left: 0.0rem;
+    }
+    @include breakpoint(M) {
+      // padding-left: 5.0rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    @include breakpoint(L) {
+      // padding-left: 15.0rem;
+      padding-left: 7.5rem;
+      padding-right: 7.5rem;
+    }
+    @include breakpoint(XL) {
+      // padding-left: 20.0rem;
+      padding-left: 10.0rem;
+      padding-right: 10.0rem;
+    }
+  }
+  .about-content {
+    padding: 0 0 2.0rem;
+    margin: 0;
+    color: #000033;
+    font-family: $body;
+    font-size: 2.0rem;
+    line-height: 1.4;
   }
 }
