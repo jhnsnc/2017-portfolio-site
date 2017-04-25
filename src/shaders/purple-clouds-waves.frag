@@ -31,14 +31,14 @@ float fractalNoise(in vec2 coord, in float persistence, in float lacunarity)
   }
   return n;
 }
-vec3 getFractalClouds(in vec2 coord, vec3 color, float transparency)
+vec3 getFractalClouds(in vec2 coord, vec3 color)
 {
   float n = fractalNoise(coord * 2., .5, 2.);
-  return n * transparency * color;
+  return n * color;
 }
 
 // waves
-vec3 getWaves(vec2 uv, vec2 offset, vec3 color, float frequency, float amplitude, float thickness, float exponent, bool up)
+vec3 getWaves(vec2 uv, vec2 offset, vec3 color, float frequency, float amplitude, float thickness, bool up)
 {
   float theta = 2.0 * (offset.x + uv.x) - T * frequency;
 
@@ -64,6 +64,11 @@ vec3 getWaves(vec2 uv, vec2 offset, vec3 color, float frequency, float amplitude
 
 void main ()
 {
+  // TODO: optimize
+  // ideas for optimization
+  //   - pre-render fractal clouds and blend them
+  //   - change scale on waves (make full height) and change height of canvas
+  //   - dynamically detect the optimal pixel density
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
 
   float r1 = hash11(1.234);
@@ -76,19 +81,18 @@ void main ()
   vec3 color = mix(#550066, #000033, d);
 
   // fractal clouds
-  color += getFractalClouds(uv + vec2(r1,r2), #8888ff, (1.0-d) * 0.15 + 0.06 * (0.5 + 0.5 * sin(1.2 * T)) );
-  color += getFractalClouds(uv + vec2(r3,r4), #f0f0f0, (1.0-d) * 0.04 + 0.02 * (0.5 + 0.5 * sin(T + 2.0)) );
+  color += ((1.0-d) * 0.15 + 0.03 + 0.03 * sin(T)) * getFractalClouds(uv + vec2(r1,r2), #8888ff);
 
   // sine waves
   // top
-  color += getWaves(uv, vec2(0.0,0.25), #6c6c6c, 0.14, 0.20, 0.150, 15.0, false);
-  color += getWaves(uv, vec2(1.0,0.25), #8c6c4c, 0.48, 0.14, 0.150, 17.0, false);
-  color += getWaves(uv, vec2(1.4,0.25), #8c8c4c, 0.54, 0.16, 0.075, 23.0, false);
+  color += getWaves(uv, vec2(0.0,0.25), #6c6c6c, 0.14, 0.20, 0.150, false);
+  // color += getWaves(uv, vec2(1.0,0.25), #8c6c4c, 0.48, 0.14, 0.150, false);
+  color += getWaves(uv, vec2(1.4,0.28), #8c8c4c, 0.54, 0.16, 0.075, false);
   // bot
-  color += 0.6 * getWaves(uv, vec2(0.0, 0.08), #4c4cde, 0.17, 0.09, 0.150, 17.0, true);
-  color += 0.6 * getWaves(uv, vec2(0.5, 0.10), #8c6c4c, 0.32, 0.07, 0.150, 17.0, true);
-  color += 0.6 * getWaves(uv, vec2(0.0, 0.15), #9999aa, 0.69, 0.08, 0.075, 23.0, true);
-  color += 0.6 * getWaves(uv, vec2(0.0, 0.08), #ac8c4c, 0.37, 0.04, 0.300, 15.0, true);
+  color += getWaves(uv, vec2(0.0, 0.08), #4c4cde, 0.17, 0.09, 0.150, true);
+  color += getWaves(uv, vec2(0.5, 0.10), #8c6c4c, 0.32, 0.07, 0.150, true);
+  // color += getWaves(uv, vec2(0.0, 0.15), #9999aa, 0.69, 0.08, 0.075, true);
+  color += getWaves(uv, vec2(0.0, 0.17), #ac8c4c, 0.67, 0.04, 0.300, true);
 
   gl_FragColor = vec4(color, 1.0);
 }

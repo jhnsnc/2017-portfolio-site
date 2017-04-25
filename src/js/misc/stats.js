@@ -1,4 +1,4 @@
-import * as Stats from 'stats';
+// import * as Stats from 'stats'; // TODO: commented out in order to temporarily fix build
 
 export function showStats() {
   // stats

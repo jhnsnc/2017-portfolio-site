@@ -43,7 +43,7 @@ export function setupWebglScene(options) {
     // put it together for rendering
     scene.add( new THREE.Mesh(geometry, material) );
     renderer = new THREE.WebGLRenderer();
-    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setPixelRatio( window.devicePixelRatio / 4 );
     renderer.domElement.classList.add('webgl-scene');
     options.container.appendChild( renderer.domElement );
 
