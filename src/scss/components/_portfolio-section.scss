@@ -1,5 +1,8 @@
 .portfolio-section {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   min-height: 100vh;
   padding: 0;
@@ -8,9 +11,10 @@
 
 .portfolio-section__base-content {
   z-index: 2;
+  flex: 0 0;
   position: relative;
   width: 94%;
-  padding: 2.5rem 0;
+  padding: 5.0rem 0 2.5rem;
   margin: 0 auto;
 
   @include breakpoint(S) {
