@@ -1,0 +1,25 @@
+.portfolio-work__container {
+  display: flex;
+  padding: 5.0rem 0 2.0rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.portfolio-work__screenshot {
+  flex: 0 0;
+  width: 400px;
+  transform: rotateY(20deg);
+  border: 0.25rem solid md-color('light-blue','600');
+  box-shadow: 0 0 2.0rem md-color('light-blue','200');
+  &.aspect-4-3 {
+    height: 300px;
+  }
+  &.aspect-2-1 {
+    height: 200px;
+  }
+  + .portfolio-work__screenshot {
+    margin-left: -150px;
+  }
+}

@@ -16,7 +16,7 @@ function runApp() {
   setupIntroSection();
   setupAboutSection();
   // setupSkillsSection();
-  // setupWorkSection();
+  setupWorkSection();
   // setupQuotesSection();
   // setupContactSection();
 }

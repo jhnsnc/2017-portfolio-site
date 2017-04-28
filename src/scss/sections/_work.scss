@@ -2,6 +2,7 @@
   background: #222;
 
   .section-heading {
-    text-shadow: $headingShadowDisplacement md-color('amber','600');
+    color: md-color('light-blue','600');
+    text-shadow: 0 0 2.0rem md-color('light-blue','200');
   }
 }
