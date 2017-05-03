@@ -38,11 +38,16 @@ export function setupWebglScene(options) {
       vertexShader: options.vertexShader,
       fragmentShader: options.fragmentShader,
     } );
+    if (options.transparent) {
+      material.transparent = true;
+    }
     lastUpdate = new Date().getTime();
 
     // put it together for rendering
     scene.add( new THREE.Mesh(geometry, material) );
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({
+      alpha: !!options.transparent
+    });
     renderer.setPixelRatio( window.devicePixelRatio / 4 );
     renderer.domElement.classList.add('webgl-scene');
     options.container.appendChild( renderer.domElement );

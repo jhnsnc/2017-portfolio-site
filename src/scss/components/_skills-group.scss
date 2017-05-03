@@ -1,0 +1,36 @@
+.skills-group__heading {
+  margin: 0;
+  padding: 4.0rem 0 2.0rem;
+  font-size: 3.0rem;
+  font-family: $body;
+  text-align: center;
+}
+
+.skills-group__comment {
+  margin: 0;
+  padding: 0 0 2.0rem;
+  font-size: 2.0rem;
+  font-family: $body;
+  text-align: center;
+}
+
+.skills-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 5.0rem;
+}
+
+.skills-group__list-item {
+  flex: 0 0;
+  color: md-color('purple', '100');
+  font-size: 1.5rem;
+  font-family: Helvetica, sans-serif;
+  white-space: nowrap;
+  line-height: 1.6;
+
+  &:after {
+    content: ' • ';
+    margin: 0 0.5rem;
+  }
+}
