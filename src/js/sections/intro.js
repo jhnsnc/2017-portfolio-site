@@ -10,5 +10,7 @@ export function setupIntroSection() {
     vertexShader: require('shaders/passthru.vert'),
     fragmentShader: require('shaders/purple-clouds-waves.frag'),
     animate: true,
+    timerType: 'cycle',
+    timerCyclePeriod: 128.0,
   });
 }

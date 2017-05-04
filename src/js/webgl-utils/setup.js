@@ -11,6 +11,9 @@ export function setupWebglScene(options) {
   let scene;
   let renderer;
   let uniforms;
+  let useGlobalTime;
+  let useCycleTime;
+  let timer;
 
   function init() {
     isPaused = !options.animate;
@@ -23,9 +26,16 @@ export function setupWebglScene(options) {
 
     // shader uniforms
     uniforms = {
-      iGlobalTime: { type: 'f', value: 1.0 },
       iResolution: { type: 'v2', value: new THREE.Vector2() },
     };
+    timer = 0.0;
+    if (options.timerType === 'cycle' && typeof !isNaN(options.timerCyclePeriod) && options.timerCyclePeriod > 0.0) {
+      uniforms.iCycleTime = { type: 'f', value: 0.0 };
+      useCycleTime = true;
+    } else if (options.timerType) {
+      uniforms.iGlobalTime = { type: 'f', value: 0.0 };
+      useGlobalTime = true;
+    }
     (options.textures || []).forEach((texture, i) => {
       // TODO: maybe run some sanity/safety checks on textures first
       uniforms[`iChannel${i}`] = { type: 't', value: texture };
@@ -48,7 +58,7 @@ export function setupWebglScene(options) {
     renderer = new THREE.WebGLRenderer({
       alpha: !!options.transparent
     });
-    renderer.setPixelRatio( window.devicePixelRatio / 4 );
+    renderer.setPixelRatio( window.devicePixelRatio / 1 );
     renderer.domElement.classList.add('webgl-scene');
     options.container.appendChild( renderer.domElement );
 
@@ -78,7 +88,18 @@ export function setupWebglScene(options) {
     }
   }
   function progressRender(timeDelta) {
-    uniforms.iGlobalTime.value += (timeDelta ? timeDelta / 1000 : 0.05);
+    if (timeDelta) {
+      timer += timeDelta / 1000;
+      if (useCycleTime) {
+        if (timer >= options.timerCyclePeriod) {
+          timer -= options.timerCyclePeriod;
+        }
+        uniforms.iCycleTime.value = timer / options.timerCyclePeriod;
+      }
+      if (useGlobalTime) {
+        uniforms.iGlobalTime.value = timer;
+      }
+    }
     renderer.render( scene, camera );
   }
   function togglePause() {
