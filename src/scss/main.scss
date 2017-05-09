@@ -1,23 +1,25 @@
 @import 'reset.css/reset';
 
-@import 'internal/global';
-@import 'internal/variables';
-@import 'internal/colors';
+@import 'shared/global';
+@import 'shared/variables';
+@import 'shared/colors';
 
-@import 'components/portfolio-nav';
-@import 'components/portfolio-section';
-@import 'components/webgl-scene';
-@import 'components/intro-title';
-@import 'components/section-heading';
-@import 'components/skills-group';
-@import 'components/portfolio-work';
-@import 'components/contact-details';
-@import 'components/contact-links';
+@import 'shared/portfolio-nav';
+@import 'shared/portfolio-section';
+@import 'shared/section-heading';
+@import 'shared/webgl-scene';
 
+@import 'intro/intro-title';
 
-@import 'sections/intro';
-@import 'sections/about';
-@import 'sections/skills';
-@import 'sections/work';
-@import 'sections/quotes';
-@import 'sections/contact';
+@import 'about/about';
+
+@import 'quotes/quotes';
+@import 'quotes/quote-block';
+@import 'quotes/rotating-content';
+
+@import 'work/work';
+@import 'work/portfolio-work';
+
+@import 'contact/contact';
+@import 'contact/contact-details';
+@import 'contact/contact-links';

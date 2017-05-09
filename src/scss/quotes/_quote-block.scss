@@ -1,0 +1,17 @@
+.quote-block {
+}
+
+.quote-block__content {
+  padding: 0 0 3.0rem;
+  font-family: $body;
+  font-size: 3.0rem;
+  line-height: 1.3;
+}
+
+.quote-block__name, .quote-block__role {
+  padding: 0;
+  color: md-color('purple', '200');
+  font-family: $body;
+  font-size: 2.2rem;
+  line-height: 1.3;
+}

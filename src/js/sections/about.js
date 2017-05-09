@@ -2,6 +2,8 @@ import * as THREE from 'THREE';
 
 import { setupWebglScene } from '../webgl-utils/setup';
 
+require('images/scratch2.png'); // FOO
+
 export function setupAboutSection() {
   console.log('Setup: ABOUT');
 

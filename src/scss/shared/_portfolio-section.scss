@@ -9,7 +9,21 @@
   margin: 0;
 }
 
-.portfolio-section__base-content {
+.portfolio-section--light {
+  @extend .portfolio-section;
+  color: #222222;
+  background: mix(#f8f8ff, #9292bc, 50%);
+  background: radial-gradient(at 50% 60%, #f8f8ff, #9292bc);
+}
+
+.portfolio-section--dark {
+  @extend .portfolio-section;
+  color: #f8f8ff;
+  background: mix(#550066, #000033, 50%);
+  background: radial-gradient(at 50% 60%, #550066, #000033);
+}
+
+.portfolio-section__inner-content {
   z-index: 2;
   flex: 0 0;
   position: relative;

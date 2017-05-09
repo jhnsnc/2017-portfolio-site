@@ -28,14 +28,14 @@
   <nav class="portfolio-nav">
     <a class="portfolio-nav__link" href="#intro">Top</a>
     <a class="portfolio-nav__link" href="#about">About</a>
-    <a class="portfolio-nav__link" href="#skills">Skills</a>
+    <!-- <a class="portfolio-nav__link" href="#skills">Skills</a> -->
+    <a class="portfolio-nav__link" href="#quotes">Quotes</a>
     <a class="portfolio-nav__link" href="#work">Work</a>
-    <!-- <a class="portfolio-nav__link" href="#quotes">Quotes</a> -->
     <a class="portfolio-nav__link" href="#contact">Contact</a>
   </nav>
 
   <!-- Intro -->
-  <section id="intro" class="portfolio-section">
+  <section id="intro" class="portfolio-section--dark">
     <h1 class="intro-title">
       <svg class="intro-title__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
         <defs>
@@ -78,20 +78,20 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="portfolio-section">
-    <div class="portfolio-section__base-content">
+  <section id="about" class="portfolio-section--light">
+    <!-- <div class="" style="z-index:1;position:absolute;left:0;bottom:0;width:100%;height:100%;background:url('/src/images/scratch2.png') left bottom no-repeat;"></div> -->
+    <div class="portfolio-section__inner-content">
       <h2 class="section-heading">Who?</h2>
-      <p class="about-content">Chris is a technical creative who loves crafting experiences that are engaging, interactive, and visually appealing. He is most effective working with other designers and developers at points of high user interaction.</p>
-      <p class="about-content">Chris has about 7 years of experience as a front-end developer; however, he has been programming and creating things on the web for as long as he can remember.</p>
-      <p class="about-content">He is currently looking for the best place to put his creativity and technical skills to work.</p>
+      <p class="about-content">Chris Johnson is a technical creative who loves crafting interactive web experiences. He has been programming and creating things on the web for as long as he can remember.</p>
+      <p class="about-content">His skills include a strong foundation in front-end web technologies, with balanced emphasis on visual presentation and technical implementation. He works best when paired with skilled designers and back-end developers.</p>
+      <p class="about-content">He is currently looking for new opportunities. If you want help making your web sites/apps even more engaging, give him a call.</p>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="portfolio-section">
-    <div class="portfolio-section__base-content">
+  <!-- <section id="skills" class="portfolio-section">
+    <div class="portfolio-section__inner-content">
       <h2 class="section-heading">Skills</h2>
-      <!-- General Front-End -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Front-End</h4>
         <p class="skills-group__comment">(anything users touch on the web)</p>
@@ -124,7 +124,6 @@
           <li class="skills-group__list-item">etc</li>
         </ul>
       </div>
-      <!-- Back-End -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Back-End</h4>
         <p class="skills-group__comment">(just not every day, please)</p>
@@ -139,7 +138,6 @@
           <li class="skills-group__list-item">cloud&nbsp;deployment</li>
         </ul>
       </div>
-      <!-- Languages -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Programming Languages</h4>
         <p class="skills-group__comment">(sometimes you just need strict typing)</p>
@@ -152,7 +150,6 @@
           <li class="skills-group__list-item">Java</li>
         </ul>
       </div>
-      <!-- Expertise -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Areas of Expertise</h4>
         <p class="skills-group__comment">(give your team new super-powers)</p>
@@ -164,7 +161,6 @@
           <li class="skills-group__list-item">Designer&nbsp;Collaboration</li>
         </ul>
       </div>
-      <!-- Experimenting -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Experimenting / Learning</h4>
         <p class="skills-group__comment">(new stuff all the time)</p>
@@ -175,7 +171,6 @@
           <li class="skills-group__list-item">WebAssembly</li>
         </ul>
       </div>
-      <!-- Other -->
       <div class="skills-group">
         <h4 class="skills-group__heading">Other Expertise</h4>
         <p class="skills-group__comment">(I hear you like your devs T-shaped)</p>
@@ -187,31 +182,59 @@
         </ul>
       </div>
     </div>
+  </section> -->
+
+  <!-- Quotes -->
+  <section id="quotes" class="portfolio-section--dark">
+    <div class="portfolio-section__inner-content">
+      <div class="rotating-content__container">
+        <div class="quote-block rotating-content__item default">
+          <p class="quote-block__content">Chris is one of the most thorough and passionate workers I know. I've worked with him on multiple projects and couldn't endorse him more for his dedication to get things done.</p>
+          <p class="quote-block__name">Brandon Jernigan</p>
+          <p class="quote-block__role">FED at Kasasa, Piqora</p>
+        </div>
+        <div class="quote-block rotating-content__item">
+          <p class="quote-block__content">A hard working self starter, Chris can take ownership of advanced projects, and see them through to completion. He has a vision focused on adding business value with his contributions, not just slogging through assigned tasks.</p>
+          <p class="quote-block__name">Chad Taylor</p>
+          <p class="quote-block__role">VP of Creative Services at Kasasa</p>
+        </div>
+        <div class="quote-block rotating-content__item">
+          <p class="quote-block__content">Chris has shown his ability on multiple occasions to demonstrate critical thinking and deep knowledge on topics like image formats, javascript, and animation. Chris is a deep thinker and would be a great addition of any team!</p>
+          <p class="quote-block__name">Jessica Tremblay</p>
+          <p class="quote-block__role">FED at IBM</p>
+        </div>
+        <!-- <div class="quote-block rotating-content__item">
+          <p class="quote-block__content">QUOTE</p>
+          <p class="quote-block__name">NAME</p>
+          <p class="quote-block__role">ROLE</p>
+        </div> -->
+        <!-- <div class="quote-block rotating-content__item">
+          <p class="quote-block__content">QUOTE</p>
+          <p class="quote-block__name">NAME</p>
+          <p class="quote-block__role">ROLE</p>
+        </div> -->
+        <button class="rotating-content__previous-button">P</button>
+        <button class="rotating-content__next-button">N</button>
+      </div>
+    </div>
   </section>
 
   <!-- Work -->
-  <section id="work" class="portfolio-section">
-    <div class="portfolio-section__base-content">
+  <section id="work" class="portfolio-section--light">
+    <div class="portfolio-section__inner-content">
       <h2 class="section-heading">Work</h2>
-      <h3 class="section-heading__subheading" style="color:#222;">[coming soon]</h3>
+      <h3 class="section-heading__subheading">[coming soon]</h3>
       <div class="portfolio-work__container">
-        <img class="portfolio-work__screenshot aspect-2-1" src="src/images/screenshots/coverflow.jpg" />
         <img class="portfolio-work__screenshot aspect-4-3" src="src/images/screenshots/destinations-cu.jpg" />
+        <img class="portfolio-work__screenshot aspect-2-1" src="src/images/screenshots/coverflow.jpg" />
         <img class="portfolio-work__screenshot aspect-4-3" src="src/images/screenshots/movfcu.jpg" />
       </div>
     </div>
   </section>
 
-  <!-- Quotes -->
-  <!-- <section id="quotes" class="portfolio-section">
-    <div class="portfolio-section__base-content">
-      <h2 class="section-heading">Quotes</h2>
-    </div>
-  </section> -->
-
   <!-- Contact -->
-  <section id="contact" class="portfolio-section">
-    <div class="portfolio-section__base-content">
+  <section id="contact" class="portfolio-section--dark">
+    <div class="portfolio-section__inner-content">
       <h2 class="section-heading">Let&rsquo;s Chat</h2>
       <p class="contact-details">(817) 239-1309</p>
       <p class="contact-details">jhnsn.c@gmail.com</p>

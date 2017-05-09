@@ -5,9 +5,8 @@ import { showStats } from './misc/stats';
 
 import { setupIntroSection } from './sections/intro';
 import { setupAboutSection } from './sections/about';
-import { setupSkillsSection } from './sections/skills';
-import { setupWorkSection } from './sections/work';
 import { setupQuotesSection } from './sections/quotes';
+import { setupWorkSection } from './sections/work';
 import { setupContactSection } from './sections/contact';
 
 function runApp() {
@@ -15,9 +14,8 @@ function runApp() {
 
   setupIntroSection();
   setupAboutSection();
-  // setupSkillsSection();
+  setupQuotesSection();
   setupWorkSection();
-  // setupQuotesSection();
   // setupContactSection();
 }
 

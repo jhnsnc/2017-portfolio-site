@@ -10,9 +10,9 @@
 .portfolio-work__screenshot {
   flex: 0 0;
   width: 400px;
-  transform: rotateY(20deg);
+  transform: rotateY(0deg);
   border: 0.25rem solid md-color('light-blue','600');
-  box-shadow: 0 0 2.0rem md-color('light-blue','200');
+  box-shadow: 0 0 3.0rem rgba(black, 0.4);
   &.aspect-4-3 {
     height: 300px;
   }
@@ -20,6 +20,18 @@
     height: 200px;
   }
   + .portfolio-work__screenshot {
-    margin-left: -150px;
+    margin-left: -50px;
+  }
+  &:nth-child(1) {
+    z-index: 1;
+    transform: rotateY(20deg);
+  }
+  &:nth-child(2) {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  &:nth-child(3) {
+    z-index: 1;
+    transform: rotateY(-20deg);
   }
 }
