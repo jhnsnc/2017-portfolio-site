@@ -66,7 +66,7 @@ export function setupWebglScene(options) {
     onResize();
     window.addEventListener( 'resize', onResize, false); // TODO: debounce me?
     if (options.animate) {
-      options.container.addEventListener('click', togglePause); // TODO: remove me in favor of autostart/stop
+      // options.container.addEventListener('click', togglePause); // TODO: remove me in favor of autostart/stop
     }
   }
 

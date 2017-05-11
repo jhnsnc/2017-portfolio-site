@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var dirSource = path.join(__dirname, 'src');
 var dirNodeModules = 'node_modules';
@@ -9,9 +10,9 @@ var dirNodeModules = 'node_modules';
 var IS_DEV = (process.env.NODE_ENV === 'dev');
 
 module.exports = {
-  entry: {
-    app: path.join(dirSource, 'js', 'main.js')
-  },
+  entry: [
+    path.join(dirSource, 'js', 'main.js'),
+  ],
   resolve: {
     modules: [
       dirNodeModules,
@@ -27,13 +28,17 @@ module.exports = {
       IS_DEV: IS_DEV
     }),
 
-    // new webpack.ProvidePlugin({
-    //   // lodash
-    //   '_': 'lodash'
-    // }),
+    new ExtractTextPlugin({
+      filename: 'css/[name].[chunkhash].css',
+      allChunks: true,
+    }),
 
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html')
+      template: path.join(__dirname, 'src', 'index.html'),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
     })
   ],
   module: {
@@ -59,17 +64,20 @@ module.exports = {
         loader: 'ify-loader'
       },
 
-      // SCSS
+      // CSS/SCSS
       {
-        test: /\.scss/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          loader: 'css-loader?importLoaders=1'
+        })
+      },
+      {
+        test: /\.(scss|sass)$/,
+        loader: ExtractTextPlugin.extract([
           {
             loader: 'css-loader',
             options: {
-              sourceMap: IS_DEV
+              sourceMap: IS_DEV,
             }
           },
           {
@@ -79,10 +87,10 @@ module.exports = {
               includePaths: [
                 dirNodeModules,
                 dirSource
-              ]
+              ],
             }
           }
-        ]
+        ])
       },
 
       // images
@@ -91,9 +99,18 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          context: dirSource
+          context: dirSource,
         }
-      }
+      },
+
+      // HTML
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+        options: {
+          root: '.'
+        }
+      },
     ]
   }
 };
