@@ -44,7 +44,7 @@
             <feComponentTransfer>
               <feFuncA type="linear" slope="0.5" intercept="0"></feFuncA>
             </feComponentTransfer>
-            <feFlood flood-color="#ffeebb" flood-opacity="0.35" />
+            <feFlood flood-color="#ffecb3" flood-opacity="0.35" /><!-- Amber-100 -->
             <feComposite result="glow" in2="blur" operator="in" />
             <feMerge>
               <feMergeNode in="glow" />
@@ -56,7 +56,7 @@
             <feComponentTransfer>
               <feFuncA type="linear" slope="1.5" intercept="0"></feFuncA>
             </feComponentTransfer>
-            <feFlood flood-color="#ffeebb" flood-opacity="0.35" />
+            <feFlood flood-color="#ffecb3" flood-opacity="0.35" /><!-- Amber-100 -->
             <feComposite result="glow" in2="blur" operator="in" />
             <feMerge>
               <feMergeNode in="glow" />
@@ -64,9 +64,9 @@
             </feMerge>
           </filter>
           <linearGradient id="gradient" color-interpolation="sRGB" spreadMethod="repeat" x1="0" x2="0" y1="0" y2="1">
-            <stop stop-color="#f8f8ff" offset="0%"></stop>
-            <stop stop-color="#babeee" offset="80%"></stop>
-            <stop stop-color="#ffffff" offset="100%"></stop>
+            <stop stop-color="#f4f5fb" offset="0%"></stop><!-- 50% mix: Indigo-50 and white -->
+            <stop stop-color="#c5cae9" offset="80%"></stop><!-- Indigo-100 -->
+            <stop stop-color="#ffffff" offset="100%"></stop><!-- white -->
           </linearGradient>
         </defs>
         <text id="textName" x="400" y="150" text-anchor="middle" fill="url(#gradient)" filter="url(#bigglow)">Chris Johnson</text>
@@ -127,7 +127,7 @@
   <section id="work" class="portfolio-section--light">
     <div class="portfolio-section__inner-content">
       <h2 class="section-heading">Work</h2>
-      <h3 class="section-heading__subheading">[coming soon]</h3>
+      <h3 class="section-heading__subheading">(coming soon)</h3>
       <div class="portfolio-work__container">
         <img class="portfolio-work__screenshot aspect-4-3" src="/images/screenshots/destinations-cu.jpg" />
         <img class="portfolio-work__screenshot aspect-2-1" src="/images/screenshots/coverflow.jpg" />
@@ -139,8 +139,8 @@
   <!-- Contact -->
   <section id="contact" class="portfolio-section--dark">
     <div class="portfolio-section__inner-content">
-      <h2 class="section-heading">Let&rsquo;s Chat</h2>
-      <p class="contact-details">(817) 239-1309</p>
+      <h2 class="section-heading">Let&rsquo;s&nbsp;Chat</h2>
+      <p class="contact-details">(817)&nbsp;239-1309</p>
       <p class="contact-details">jhnsn.c@gmail.com</p>
       <div class="contact-links__container">
         <a class="contact-links__link" href="https://codepen.io/jhnsnc/" target="_blank">

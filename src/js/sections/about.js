@@ -1,6 +1,6 @@
 import * as THREE from 'THREE';
 
-import { setupWebglScene } from '../webgl-utils/setup';
+import { setupWebglScene } from '../utils/webgl-scene-setup';
 
 export function setupAboutSection() {
   console.log('Setup: ABOUT');

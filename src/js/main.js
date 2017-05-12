@@ -4,18 +4,18 @@ require('scss/main.scss');
 import { showStats } from './misc/stats';
 
 import { setupIntroSection } from './sections/intro';
-import { setupAboutSection } from './sections/about';
+// import { setupAboutSection } from './sections/about';
 import { setupQuotesSection } from './sections/quotes';
-import { setupWorkSection } from './sections/work';
-import { setupContactSection } from './sections/contact';
+// import { setupWorkSection } from './sections/work';
+// import { setupContactSection } from './sections/contact';
 
 function runApp() {
-  showStats();
+  // showStats();
 
   setupIntroSection();
-  setupAboutSection();
+  // setupAboutSection();
   setupQuotesSection();
-  setupWorkSection();
+  // setupWorkSection();
   // setupContactSection();
 }
 

@@ -74,7 +74,7 @@ void main ()
   float d = length(uv-vec2(0.5, 0.3) / 0.8602);
 
   // base gradient
-  vec3 color = mix(#550066, #000033, d);
+  vec3 color = mix(#6a1b9a, #041530, d);
 
   // fractal clouds
   // color += ((1.0-d) * 0.15 + 0.03 + 0.03 * sin(T)) * getFractalClouds(uv + vec2(r1,r2), #8888ff);

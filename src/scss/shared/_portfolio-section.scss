@@ -7,20 +7,25 @@
   min-height: 100vh;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .portfolio-section--light {
   @extend .portfolio-section;
-  color: #222222;
-  background: mix(#f8f8ff, #9292bc, 50%);
-  background: radial-gradient(at 50% 60%, #f8f8ff, #9292bc);
+  color: md-color('grey', '900');
+  $innerColor: $offwhite;
+  $outerColor: md-color('indigo', '100');
+  background: mix($innerColor, $outerColor, 50%);
+  background: radial-gradient(at 50% 60%, $innerColor, $outerColor);
 }
 
 .portfolio-section--dark {
   @extend .portfolio-section;
-  color: #f8f8ff;
-  background: mix(#550066, #000033, 50%);
-  background: radial-gradient(at 50% 60%, #550066, #000033);
+  color: $offwhite;
+  $innerColor: md-color('purple', '800');
+  $outerColor: mix(md-color('blue', '900'), #000000, 30%);
+  background: mix($innerColor, $outerColor, 50%);
+  background: radial-gradient(farthest-corner at 50% 60%, $innerColor, $outerColor);
 }
 
 .portfolio-section__inner-content {
