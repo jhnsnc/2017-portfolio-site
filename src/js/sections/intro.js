@@ -1,5 +1,3 @@
-import * as THREE from 'THREE';
-
 import { setupWebglScene } from '../utils/webgl-scene-setup';
 
 export function setupIntroSection() {

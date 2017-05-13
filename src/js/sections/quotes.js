@@ -1,32 +1,53 @@
-import * as THREE from 'THREE';
-
-import { setupWebglScene } from '../utils/webgl-scene-setup';
+import fitText from '../utils/fit-text';
+import debounce from '../utils/debounce';
 
 export function setupQuotesSection() {
   console.log('Setup: QUOTES');
 
   // cache DOM elements
   const quotesSection = document.getElementById('quotes');
-  const rotatingContent = quotesSection.querySelector('.rotating-content__container');
-  const btnPrev = quotesSection.querySelector('.rotating-content__previous-button');
-  const btnNext = quotesSection.querySelector('.rotating-content__next-button');
-  const quoteItems = [...quotesSection.querySelectorAll('.rotating-content__item')];
+  const textContainer = quotesSection.querySelector('.portfolio-section__inner-content');
+  const rotatingContentContainer = quotesSection.querySelector('.rotating-content__container');
+  const btnPrev = rotatingContentContainer.querySelector('.rotating-content__previous-button');
+  const btnNext = rotatingContentContainer.querySelector('.rotating-content__next-button');
+  const quoteItems = [...rotatingContentContainer.querySelectorAll('.rotating-content__item')];
 
-  // resize quotes area
+  setupTextAdjustment(rotatingContentContainer, quotesSection, textContainer, quoteItems);
+  setupRotatingContent(rotatingContentContainer, btnPrev, btnNext, quoteItems);
+}
+
+function setupTextAdjustment(rotatingContentContainer, quotesSection, textContainer, quoteItems) {
+  // define update function
   function adjustQuoteAreaHeight() {
-    let largestHeight = 0;
-    quoteItems.forEach(el => {
-      const dimensions = el.getBoundingClientRect();
-      if (dimensions.height > largestHeight) {
-        largestHeight = dimensions.height;
-      }
-    });
-
-    rotatingContent.style.height = `${largestHeight}px`;
+    if (window.innerWidth < 600) {
+      rotatingContentContainer.style.height = 'auto';
+    } else {
+      let largestHeight = 0;
+      quoteItems.forEach(el => {
+        const dimensions = el.getBoundingClientRect();
+        if (dimensions.height > largestHeight) {
+          largestHeight = dimensions.height;
+        }
+      });
+      rotatingContentContainer.style.height = `${largestHeight}px`;
+    }
   }
-  window.addEventListener('resize', adjustQuoteAreaHeight); // TODO: debounce
-  adjustQuoteAreaHeight(); // initial
+  function adjustTextSize() {
+    const containerStyles = getComputedStyle(textContainer);
+    const heightLimit = Math.min(
+      quotesSection.getBoundingClientRect().height - parseInt(containerStyles.paddingTop, 10) - parseInt(containerStyles.paddingBottom, 10),
+      textContainer.getBoundingClientRect().width * 9 / 16
+    );
+    quoteItems.forEach(item => fitText(item, 'height', heightLimit, 6, 24));
+    adjustQuoteAreaHeight();
+  }
 
+  // run once, run again on resize
+  window.addEventListener('resize', debounce(adjustTextSize, 100));
+  setTimeout(adjustTextSize, 10);
+}
+
+function setupRotatingContent(rotatingContentContainer, btnPrev, btnNext, quoteItems) {
   // show initial
   let currentQuote = 0;
   quoteItems.forEach(el => {
@@ -62,5 +83,5 @@ export function setupQuotesSection() {
   });
 
   // all done
-  rotatingContent.classList.add('interaction-enabled');
+  rotatingContentContainer.classList.add('interaction-enabled');
 }

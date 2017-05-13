@@ -1,32 +1,36 @@
 .rotating-content__container {
   position: relative;
 
-  &.interaction-enabled {
-    .rotating-content__previous-button, .rotating-content__next-button {
-      display: block;
+  @include breakpoint(S) {
+    &.interaction-enabled {
+      .rotating-content__previous-button, .rotating-content__next-button {
+        display: block;
+      }
     }
   }
 }
 
 .rotating-content__item {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transition: all 400ms;
-  &.active {
-    opacity: 1;
-    transition-delay: 400ms;
-  }
-  &.default {
-    position: relative;
-    opacity: 1;
+  @include breakpoint(S) {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 400ms;
+    &.active {
+      opacity: 1;
+      transition-delay: 400ms;
+    }
+    &.default {
+      position: relative;
+      opacity: 1;
+    }
   }
 }
 
 .rotating-content__previous-button, .rotating-content__next-button {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  bottom: -8.0rem;
   display: none; // shown once interaction enabled in JS
   width: 4.0rem;
   height: 4.0rem;
@@ -53,14 +57,14 @@
 }
 
 .rotating-content__previous-button {
-  left: -6.0rem;
+  left: 0;
   &:after {
     content: '❮';
   }
 }
 
 .rotating-content__next-button {
-  right: -6.0rem;
+  right: 0;
   &:after {
     content: '❯';
   }
