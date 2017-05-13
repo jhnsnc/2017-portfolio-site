@@ -4,7 +4,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
+  perspective: 800px;
 }
 
 .portfolio-work__screenshot {
@@ -12,19 +12,19 @@
   width: 400px;
   transform: rotateY(0deg);
   border: 0.25rem solid md-color('light-blue','600');
-  box-shadow: 0 0 3.0rem rgba(black, 0.4);
+  box-shadow: 0 1.5rem 5.0rem rgba(black, 0.4);
   &.aspect-4-3 {
     height: 300px;
+  }
+  &.aspect-codepen {
+    height: 225px;
   }
   &.aspect-2-1 {
     height: 200px;
   }
-  + .portfolio-work__screenshot {
-    margin-left: -50px;
-  }
   &:nth-child(1) {
     z-index: 1;
-    transform: rotateY(20deg);
+    transform: rotateY(50deg);
   }
   &:nth-child(2) {
     z-index: 2;
@@ -32,6 +32,6 @@
   }
   &:nth-child(3) {
     z-index: 1;
-    transform: rotateY(-20deg);
+    transform: rotateY(-50deg);
   }
 }

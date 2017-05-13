@@ -1,7 +1,6 @@
 import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
-
 export function setupContactSection() {
   console.log('Setup: CONTACT');
 
@@ -24,6 +23,6 @@ export function setupContactSection() {
     });
   }
 
-  window.addEventListener('resize', debounce(adjustTextSize, 100)); // TODO: debounce
+  window.addEventListener('resize', debounce(adjustTextSize, 100));
   setTimeout(adjustTextSize, 10);
 }

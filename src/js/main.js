@@ -6,7 +6,7 @@ import { showStats } from './misc/stats';
 import { setupIntroSection } from './sections/intro';
 import { setupAboutSection } from './sections/about';
 import { setupQuotesSection } from './sections/quotes';
-// import { setupWorkSection } from './sections/work';
+import { setupWorkSection } from './sections/work';
 import { setupContactSection } from './sections/contact';
 
 function runApp() {
@@ -15,7 +15,7 @@ function runApp() {
   setupIntroSection();
   setupAboutSection();
   setupQuotesSection();
-  // setupWorkSection();
+  setupWorkSection();
   setupContactSection();
 }
 
