@@ -5,16 +5,16 @@
   }
 
   .portfolio-section__inner-content {
-    padding-top: 10.0rem;
-    padding-bottom: 6.0rem;
+    padding-top: 8.0rem;
+    padding-bottom: 4.0rem;
     font-size: 1.0rem;
     @include breakpoint(S) {
       padding-left: 0.0rem;
     }
     @include breakpoint(M) {
       width: 65%;
-      padding-top: 14.0rem;
-      padding-bottom: 10.0rem;
+      padding-top: 12.0rem;
+      padding-bottom: 8.0rem;
       padding-right: 2.5rem;
       margin-left: auto;
       margin-right: 0;
@@ -32,5 +32,16 @@
     font-family: $body;
     font-size: 2.0em;
     line-height: 1.4;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 0.25rem solid rgba(md-color('grey', '900'), 0.0);
+      transition: color 200ms, border 200ms;
+      &:hover, &:focus {
+        color: md-color('purple', '300');
+        border-bottom: 0.25rem solid md-color('purple', '300');
+      }
+    }
   }
 }

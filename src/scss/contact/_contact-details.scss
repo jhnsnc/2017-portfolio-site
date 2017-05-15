@@ -6,4 +6,14 @@
   line-height: 1.4;
   text-align: center;
   white-space: nowrap;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 200ms, text-shadow 200ms;
+    &:hover, &:focus {
+      color: md-color('purple', '300');
+      text-shadow: 0 0 0.6rem mix(md-color('purple', '900'), #000000);
+    }
+  }
 }
