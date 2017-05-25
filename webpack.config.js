@@ -29,11 +29,13 @@ module.exports = {
       IS_DEV: IS_DEV
     }),
 
+    // Save CSS as separate files
     new ExtractTextPlugin({
       filename: 'css/[name].[chunkhash].css',
       allChunks: true,
     }),
 
+    // Render index
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       chunks: ['main'],
@@ -44,6 +46,8 @@ module.exports = {
       },
     }),
 
+    // Render error pages (400, 401, 403, 404, 500)
+    // note: error pages are saved as .shtml for convenience working with my web host
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'error.ejs'),
       chunks: ['errors'],
