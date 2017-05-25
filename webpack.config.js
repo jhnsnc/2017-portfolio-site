@@ -10,9 +10,10 @@ var dirNodeModules = 'node_modules';
 var IS_DEV = (process.env.NODE_ENV === 'dev');
 
 module.exports = {
-  entry: [
-    path.join(dirSource, 'js', 'main.js'),
-  ],
+  entry: {
+    main: path.join(dirSource, 'js', 'main.js'),
+    errors: path.join(dirSource, 'js', 'error-pages.js')
+  },
   resolve: {
     modules: [
       dirNodeModules,
@@ -35,11 +36,78 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
+      chunks: ['main'],
+      filename: 'index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
       },
-    })
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'error.ejs'),
+      chunks: ['errors'],
+      filename: '400.shtml',
+      errorTitle: '400',
+      errorDescription: 'Bad Request',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+      inject: true,
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'error.ejs'),
+      chunks: ['errors'],
+      filename: '401.shtml',
+      errorTitle: '401',
+      errorDescription: 'Unauthorized Access',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+      inject: true,
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'error.ejs'),
+      chunks: ['errors'],
+      filename: '403.shtml',
+      errorTitle: '403',
+      errorDescription: 'Access Forbidden',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+      inject: true,
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'error.ejs'),
+      chunks: ['errors'],
+      filename: '404.shtml',
+      errorTitle: '404',
+      errorDescription: 'Page Not Found',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+      inject: true,
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'error.ejs'),
+      chunks: ['errors'],
+      filename: '500.shtml',
+      errorTitle: '500',
+      errorDescription: 'Internal Server Error',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+      inject: true,
+    }),
   ],
   module: {
     rules: [

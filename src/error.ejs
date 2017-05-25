@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= htmlWebpackPlugin.options.errorTitle %> - <%= htmlWebpackPlugin.options.errorDescription %></title>
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <style>
+    <%= require('!!css-loader!sass-loader?{"includePaths":["node_modules","src"]}!scss/error-pages.scss') %>
+  </style>
+</head>
+
+<body>
+
+  <!-- Intro -->
+  <section id="error" class="portfolio-section--dark">
+    <h1 class="error-title">
+      <a href="/">
+        <svg class="error-title__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="bigglow">
+              <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="5"></feGaussianBlur>
+              <feComponentTransfer>
+                <feFuncA type="linear" slope="0.5" intercept="0"></feFuncA>
+              </feComponentTransfer>
+              <feFlood flood-color="#250a46" flood-opacity="0.95" /><!-- 50% mix: Purple-900 and black -->
+              <feComposite result="glow" in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode in="glow" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="smallglow" x="-0.2" y="-2.5" width="1.4" height="6.0">
+              <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
+              <feComponentTransfer>
+                <feFuncA type="linear" slope="1.5" intercept="0"></feFuncA>
+              </feComponentTransfer>
+              <feFlood flood-color="#250a46" flood-opacity="0.95" /><!-- 50% mix: Purple-900 and black -->
+              <feComposite result="glow" in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode in="glow" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="gradient" color-interpolation="sRGB" spreadMethod="repeat" x1="0" x2="0" y1="0" y2="1">
+              <stop stop-color="#f4f5fb" offset="0%"></stop><!-- 50% mix: Indigo-50 and white -->
+              <stop stop-color="#c5cae9" offset="80%"></stop><!-- Indigo-100 -->
+              <stop stop-color="#ffffff" offset="100%"></stop><!-- white -->
+            </linearGradient>
+          </defs>
+          <text id="errorTitle" x="400" y="250" text-anchor="middle" fill="url(#gradient)" filter="url(#bigglow)"><%= htmlWebpackPlugin.options.errorTitle %></text>
+          <rect x="160" y="290" width="480" height="3" fill="url(#gradient)" filter="url(#smallglow)"></rect>
+          <text id="errorDescription" x="400" y="365" text-anchor="middle" fill="url(#gradient)" filter="url(#smallglow)"><%= htmlWebpackPlugin.options.errorDescription %></text>
+        </svg>
+      </a>
+    </h1>
+    <div id="error-webgl-container"></div>
+  </section>
+
+  <!-- scripts -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+
+</body>
+</html>
