@@ -16,6 +16,7 @@
   require('!file-loader?name=[name].[ext]!misc/mstile-150x150.png')
 
 import { showStats } from './misc/stats';
+import { showConsoleMessage } from './misc/console-message';
 
 import { setupIntroSection } from './sections/intro';
 import { setupAboutSection } from './sections/about';
@@ -25,6 +26,7 @@ import { setupContactSection } from './sections/contact';
 
 function runApp() {
   // showStats();
+  showConsoleMessage();
 
   setupIntroSection();
   setupAboutSection();

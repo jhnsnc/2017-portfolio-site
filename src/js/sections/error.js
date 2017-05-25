@@ -1,8 +1,6 @@
 import { setupWebglScene } from '../utils/webgl-scene-setup';
 
 export function setupErrorSection() {
-  console.log('Setup: ERROR');
-
   setupWebglScene({
     container: document.getElementById( 'error' ),
     vertexShader: require('shaders/passthru.vert'),

@@ -1,8 +1,6 @@
 import { setupWebglScene } from '../utils/webgl-scene-setup';
 
 export function setupIntroSection() {
-  console.log('Setup: INTRO');
-
   setupWebglScene({
     container: document.getElementById( 'intro' ),
     vertexShader: require('shaders/passthru.vert'),

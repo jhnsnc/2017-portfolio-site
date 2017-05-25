@@ -121,7 +121,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /(node_modules)/,
         options: {
-          comments: false,
+          comments: true,
           compact: true
         }
       },

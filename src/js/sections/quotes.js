@@ -2,8 +2,6 @@ import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
 export function setupQuotesSection() {
-  console.log('Setup: QUOTES');
-
   // cache DOM elements
   const quotesSection = document.getElementById('quotes');
   const textContainer = quotesSection.querySelector('.portfolio-section__inner-content');

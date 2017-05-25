@@ -2,8 +2,6 @@ import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
 export function setupAboutSection() {
-  console.log('Setup: ABOUT');
-
   // cache DOM elements
   const aboutSection = document.getElementById('about');
   const textContainer = aboutSection.querySelector('.portfolio-section__inner-content');

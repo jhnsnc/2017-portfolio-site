@@ -2,8 +2,6 @@ import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
 export function setupContactSection() {
-  console.log('Setup: CONTACT');
-
   const contactSection = document.getElementById('contact');
   const textContainer = contactSection.querySelector('.portfolio-section__inner-content');
   const textHeadings = [...textContainer.querySelectorAll('.section-heading')];

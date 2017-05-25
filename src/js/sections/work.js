@@ -2,8 +2,6 @@ import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
 export function setupWorkSection() {
-  console.log('Setup: WORK');
-
   const workSection = document.getElementById('work');
   const textContainer = workSection.querySelector('.portfolio-section__inner-content');
   const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
