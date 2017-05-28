@@ -3,10 +3,14 @@ import debounce from '../utils/debounce';
 
 export function setupWorkSection() {
   const workSection = document.getElementById('work');
+  if (!workSection) { return; }
+
+  // cache DOM elements
   const textContainer = workSection.querySelector('.portfolio-section__inner-content');
   const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
   const textSubHeadings = [...textContainer.querySelectorAll('.section-heading__subheading')];
 
+  // setup resize function
   function adjustTextSize() {
     const widthLimit = textContainer.getBoundingClientRect().width;
     textHeadings.forEach(item => {
@@ -21,6 +25,7 @@ export function setupWorkSection() {
     });
   }
 
+  // resize now and watch for updates
   window.addEventListener('resize', debounce(adjustTextSize, 100));
   setTimeout(adjustTextSize, 10);
 }

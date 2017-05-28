@@ -12,6 +12,7 @@ var IS_DEV = (process.env.NODE_ENV === 'dev');
 module.exports = {
   entry: {
     main: path.join(dirSource, 'js', 'main.js'),
+    work: path.join(dirSource, 'js', 'work.js'),
     errors: path.join(dirSource, 'js', 'error-pages.js')
   },
   resolve: {
@@ -40,6 +41,17 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       chunks: ['main'],
       filename: 'index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+    }),
+
+    // Render portfolio items page
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'work.html'),
+      chunks: ['work'],
+      filename: 'work.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

@@ -3,10 +3,14 @@ import debounce from '../utils/debounce';
 
 export function setupContactSection() {
   const contactSection = document.getElementById('contact');
+  if (!contactSection) { return; }
+
+  // cache DOM elements
   const textContainer = contactSection.querySelector('.portfolio-section__inner-content');
   const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
   const textDetails = [...textContainer.querySelectorAll('.contact-details')];
 
+  // setup resize function
   function adjustTextSize() {
     const widthLimit = textContainer.getBoundingClientRect().width;
     textHeadings.forEach(item => {
@@ -21,6 +25,7 @@ export function setupContactSection() {
     });
   }
 
+  // resize now and watch for updates
   window.addEventListener('resize', debounce(adjustTextSize, 100));
   setTimeout(adjustTextSize, 10);
 }

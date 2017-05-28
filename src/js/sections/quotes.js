@@ -2,8 +2,10 @@ import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
 export function setupQuotesSection() {
-  // cache DOM elements
   const quotesSection = document.getElementById('quotes');
+  if (!quotesSection) { return; }
+
+  // cache DOM elements
   const textContainer = quotesSection.querySelector('.portfolio-section__inner-content');
   const rotatingContentContainer = quotesSection.querySelector('.rotating-content__container');
   const btnPrev = rotatingContentContainer.querySelector('.rotating-content__previous-button');
