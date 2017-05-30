@@ -6,21 +6,22 @@
 }
 
 .contact-links__logo {
-  width: 3.0rem;
-  height: 3.0rem;
+  width: 2.5rem;
+  height: 2.5rem;
   transition: all 300ms;
+  fill: $offwhite;
 
   @include breakpoint(S) {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  @include breakpoint(M) {
     width: 4.0rem;
     height: 4.0rem;
   }
-  @include breakpoint(M) {
+  @include breakpoint(L) {
     width: 5.0rem;
     height: 5.0rem;
-  }
-  @include breakpoint(L) {
-    width: 6.0rem;
-    height: 6.0rem;
   }
 }
 
@@ -31,10 +32,10 @@
   margin: 0 0.5rem;
 
   @include breakpoint(S) {
-    margin: 0 1.25rem;
+    margin: 0 1.0rem;
   }
   @include breakpoint(M) {
-    margin: 0 2.0rem;
+    margin: 0 1.5rem;
   }
 
   &:hover, &:focus {
