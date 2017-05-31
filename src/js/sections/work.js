@@ -132,7 +132,7 @@ function createPortfolioDetailView(entryData) {
   entryTitle.innerHTML = entryData.fullTitle;
   const closeButton = document.createElement('a');
   closeButton.classList.add('portfolio-details__close-button');
-  closeButton.innerText = '×';
+  closeButton.innerHTML = '&times;';
   closeButton.setAttribute('href', '#');
   const screenshot = document.createElement('div');
   screenshot.classList.add('portfolio-details__screenshot', 'letterboxed-image');
