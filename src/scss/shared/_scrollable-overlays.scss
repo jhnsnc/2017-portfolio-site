@@ -1,0 +1,31 @@
+$overlayTransitionInTime: 600ms;
+$overlayTransitionOutTime: 300ms;
+
+.scrollable-overlays__normal-flow {
+  height: 100vh;
+  overflow: auto;
+
+  .overlay-active & {
+    overflow: hidden;
+  }
+}
+
+.scrollable-overlays__overlay-container {
+  pointer-events: none;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: rgba(#000000, 0.7);
+  opacity: 0.0;
+  transition: opacity $overlayTransitionOutTime;
+
+  .overlay-active & {
+    pointer-events: all;
+    opacity: 1.0;
+    transition: opacity $overlayTransitionInTime;
+  }
+}

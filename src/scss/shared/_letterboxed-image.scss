@@ -1,0 +1,46 @@
+$blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
+
+.letterboxed-image {
+  position: relative;
+  overflow: hidden;
+
+  &:before, &:after {
+    content: ' ';
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:before {
+    box-shadow: inset 0 1.5rem 2.5rem -1.5rem rgba($blackoutColor, 0.2);
+  }
+  &:after {
+    box-shadow: inset 0 -1.5rem 2.5rem -1.5rem rgba($blackoutColor, 0.2);
+  }
+}
+
+.letterboxed-image__fit, .letterboxed-image__fill {
+  position: absolute;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.letterboxed-image__fit {
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.letterboxed-image__fill {
+  z-index: 1;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  background-size: cover;
+  filter: blur(0.15rem);
+  opacity: 0.5;
+}

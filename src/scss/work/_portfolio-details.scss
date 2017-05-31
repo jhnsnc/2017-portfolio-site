@@ -1,0 +1,218 @@
+$blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
+
+.portfolio-details {
+  padding: 2.0rem 0;
+  background: rgba($blackoutColor, 0.8);
+}
+
+.portfolio-details__container {
+  // pointer-events: none;
+  position: relative;
+  display: none;
+  width: 94%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background: $offwhite;
+  box-shadow: 0 0.1rem 1.0rem rgba($blackoutColor, 0.6);
+  border-radius: 0.75rem;
+
+  @include breakpoint(S) {
+    width: 560px;
+  }
+  @include breakpoint(M) {
+    width: 800px;
+  }
+  @include breakpoint(L) {
+    width: 1000px;
+  }
+  @include breakpoint(XL) {
+    width: 1400px;
+  }
+
+  &.active {
+    // pointer-events: all;
+    display: block;
+  }
+}
+
+// title
+
+.portfolio-details__title {
+  padding: 1.0rem 5.2rem 1.0rem 1.5rem;
+  margin: 0;
+  color: $offwhite;
+  font-size: 2.2rem;
+  font-family: $oswald;
+  font-weight: 700;
+  line-height: 1.0;
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
+  background: md-color('blue', '500');
+
+  @include breakpoint(S) {
+    font-size: 2.6rem;
+  }
+  @include breakpoint(M) {
+    font-size: 3.2rem;
+  }
+
+  span {
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    @include breakpoint(S) {
+      font-size: 2.0rem;
+    }
+    @include breakpoint(M) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.portfolio-details__close-button {
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5.2rem;
+  height: 5.2rem;
+  color: $offwhite;
+  font-size: 5.2rem;
+  font-family: $oswald;
+  font-weight: 300;
+  line-height: 4.7rem;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
+  background: rgba(#000000, 0.0);
+  transition: background 200ms;
+
+  &:hover, &:focus {
+    background: rgba(#000000, 0.6);
+  }
+}
+
+// image
+
+.portfolio-details__screenshot {
+  background: $blackoutColor;
+
+  $screenshotAspect: 10/4;
+  height: 94vw / $screenshotAspect;
+
+  @include breakpoint(S) {
+    height: 560px / $screenshotAspect;
+  }
+  @include breakpoint(M) {
+    height: 800px / $screenshotAspect;
+  }
+  @include breakpoint(L) {
+    height: 1000px / $screenshotAspect;
+  }
+  @include breakpoint(XL) {
+    height: 1400px / $screenshotAspect;
+  }
+}
+
+// description etc
+
+.portfolio-details__information {
+  max-width: 1200px;
+  padding: 1.5rem 1.5rem 1.5rem;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-family: $body;
+  font-weight: 400;
+
+  @include breakpoint(M) {
+    padding-left: 2.0rem;
+    padding-right: 2.0rem;
+  }
+  @include breakpoint(L) {
+    padding-left: 6.0rem;
+    padding-right: 6.0rem;
+  }
+  @include breakpoint(XL) {
+    padding-left: 12.0rem;
+    padding-right: 12.0rem;
+  }
+}
+
+.portfolio-details__description {
+  padding: 0 0 1.5rem;
+  line-height: 1.4;
+}
+
+.portfolio-details__notification {
+  position: relative;
+  padding: 0.75rem 1.0rem 0.75rem 3.0rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.4;
+  background: md-color('blue', '100');
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 1.0rem rgba(md-color('blue', '300'), 0.4);
+
+  @include breakpoint(S) {
+    padding-left: 4.0rem;
+  }
+
+  .icon {
+    position: absolute;
+    left: 1.6rem;
+    top: 1.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: translate(-50%, -50%);
+    fill: $blackoutColor;
+
+    @include breakpoint(S) {
+      left: 2.2rem;
+      top: 2.2rem;
+      width: 2.0rem;
+      height: 2.0rem;
+    }
+  }
+}
+
+.portfolio-details__notification--warning {
+  @extend .portfolio-details__notification;
+}
+.portfolio-details__notification--information {
+  @extend .portfolio-details__notification;
+}
+
+.portfolio-details__link {
+  $buttonColor: md-color('blue', '500');
+
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.0rem 0.75rem 2.5rem;
+  margin: 0.5rem 1.5rem 1.0rem 0;
+  color: $offwhite;
+  font-family: $oswald;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 0.05rem;
+  text-shadow: 0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
+  background: $buttonColor;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
+  outline: none;
+  transition: all 200ms;
+  &:hover, &:focus {
+    background: mix($buttonColor, $offwhite, 50%);
+    transform: translateY(-0.06rem);
+    box-shadow: 0.1em 0.1em 0.4em rgba(mix($buttonColor, $blackoutColor, 50%), 0.5);
+  }
+  .icon {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translate(-50%, -50%);
+    fill: $offwhite;
+    filter: drop-shadow(0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2));
+  }
+}

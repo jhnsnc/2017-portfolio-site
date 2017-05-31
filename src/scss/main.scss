@@ -8,6 +8,7 @@
 @import 'shared/portfolio-section';
 @import 'shared/section-heading';
 @import 'shared/webgl-scene';
+@import 'shared/scrollable-overlays';
 
 @import 'intro/intro-title';
 
@@ -20,6 +21,9 @@
 
 @import 'work/work';
 @import 'work/portfolio-work';
+@import 'shared/letterboxed-image';
+@import 'work/portfolio-list';
+@import 'work/portfolio-details';
 
 @import 'contact/contact';
 @import 'contact/contact-details';

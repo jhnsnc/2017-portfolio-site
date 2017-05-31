@@ -17,10 +17,10 @@
 
 import { showConsoleMessage } from './misc/console-message';
 
-import { setupWorkSection } from './sections/work';
+import { setupPortfolioSection } from './sections/portfolio';
 
 function runApp() {
-  setupWorkSection();
+  setupPortfolioSection();
 }
 
 runApp();
