@@ -392,8 +392,8 @@ export const portfolioData = [
   },
   // Experiments
   {
-    shortTitle: 'Title Animation Recreation',
-    fullTitle: 'Headlander Animation',
+    shortTitle: 'Headlander Animation Copy',
+    fullTitle: 'Headlander Animation Recreation',
     images: {
       thumbnail: require('../../images/screenshots/headlander-thumb.png'),
       full: require('../../images/screenshots/headlander-full.jpg'),

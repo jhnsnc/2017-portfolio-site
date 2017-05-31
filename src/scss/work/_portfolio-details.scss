@@ -83,9 +83,11 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   font-weight: 300;
   line-height: 4.7rem;
   text-align: center;
+  text-decoration: none;
   text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
   background: rgba(#000000, 0.0);
   transition: background 200ms;
+  outline: none;
 
   &:hover, &:focus {
     background: rgba(#000000, 0.6);
@@ -198,12 +200,14 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   background: $buttonColor;
   border-radius: 0.3rem;
   box-shadow: 0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
-  outline: none;
   transition: all 200ms;
   &:hover, &:focus {
     background: mix($buttonColor, $offwhite, 50%);
     transform: translateY(-0.06rem);
     box-shadow: 0.1em 0.1em 0.4em rgba(mix($buttonColor, $blackoutColor, 50%), 0.5);
+  }
+  &:focus {
+    outline-color: md-color('purple','a100');
   }
   .icon {
     position: absolute;

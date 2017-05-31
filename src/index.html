@@ -40,137 +40,142 @@
     <a class="portfolio-nav__link" href="#contact">Contact</a>
   </nav>
 
-  <!-- Intro -->
-  <section id="intro" class="portfolio-section--dark">
-    <h1 class="intro-title">
-      <svg class="intro-title__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <filter id="bigglow">
-            <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="5"></feGaussianBlur>
-            <feComponentTransfer>
-              <feFuncA type="linear" slope="0.5" intercept="0"></feFuncA>
-            </feComponentTransfer>
-            <feFlood flood-color="#250a46" flood-opacity="0.35" /><!-- 50% mix: Purple-900 and black -->
-            <feComposite result="glow" in2="blur" operator="in" />
-            <feMerge>
-              <feMergeNode in="glow" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <filter id="smallglow" x="-0.2" y="-2.5" width="1.4" height="6.0">
-            <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
-            <feComponentTransfer>
-              <feFuncA type="linear" slope="1.5" intercept="0"></feFuncA>
-            </feComponentTransfer>
-            <feFlood flood-color="#250a46" flood-opacity="0.35" /><!-- 50% mix: Purple-900 and black -->
-            <feComposite result="glow" in2="blur" operator="in" />
-            <feMerge>
-              <feMergeNode in="glow" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <linearGradient id="gradient" color-interpolation="sRGB" spreadMethod="repeat" x1="0" x2="0" y1="0" y2="1">
-            <stop stop-color="#f4f5fb" offset="0%"></stop><!-- 50% mix: Indigo-50 and white -->
-            <stop stop-color="#c5cae9" offset="80%"></stop><!-- Indigo-100 -->
-            <stop stop-color="#ffffff" offset="100%"></stop><!-- white -->
-          </linearGradient>
-        </defs>
-        <text id="textName" x="400" y="150" text-anchor="middle" fill="url(#gradient)" filter="url(#bigglow)">Chris Johnson</text>
-        <rect x="10" y="190" width="780" height="3" fill="url(#gradient)" filter="url(#smallglow)"></rect>
-        <text id="textTitle" x="400" y="265" text-anchor="middle" fill="url(#gradient)" filter="url(#smallglow)">Interactive Front-End Developer</text>
-      </svg>
-    </h1>
-    <div id="intro-webgl-container"></div>
-  </section>
+  <div class="scrollable-overlays__normal-flow">
 
-  <!-- About -->
-  <section id="about" class="portfolio-section--light">
-    <img class="profile-headshot" src="/images/headshot.png" />
-    <div class="portfolio-section__inner-content">
-      <p class="about-content">Howdy, I&rsquo;m Chris Johnson. I create interactive experiences on the web.</p>
-      <p class="about-content">I&rsquo;m a front-end developer, with balanced emphasis on visual presentation and technical implementation.</p>
-      <p class="about-content">I&rsquo;m available for work. So if you would like some extra help making your web sites/apps more engaging, <a href="#contact">contact me</a>.</p>
-    </div>
-  </section>
+    <!-- Intro -->
+    <section id="intro" class="portfolio-section--dark">
+      <h1 class="intro-title">
+        <svg class="intro-title__svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="bigglow">
+              <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="5"></feGaussianBlur>
+              <feComponentTransfer>
+                <feFuncA type="linear" slope="0.5" intercept="0"></feFuncA>
+              </feComponentTransfer>
+              <feFlood flood-color="#250a46" flood-opacity="0.35" /><!-- 50% mix: Purple-900 and black -->
+              <feComposite result="glow" in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode in="glow" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="smallglow" x="-0.2" y="-2.5" width="1.4" height="6.0">
+              <feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
+              <feComponentTransfer>
+                <feFuncA type="linear" slope="1.5" intercept="0"></feFuncA>
+              </feComponentTransfer>
+              <feFlood flood-color="#250a46" flood-opacity="0.35" /><!-- 50% mix: Purple-900 and black -->
+              <feComposite result="glow" in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode in="glow" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="gradient" color-interpolation="sRGB" spreadMethod="repeat" x1="0" x2="0" y1="0" y2="1">
+              <stop stop-color="#f4f5fb" offset="0%"></stop><!-- 50% mix: Indigo-50 and white -->
+              <stop stop-color="#c5cae9" offset="80%"></stop><!-- Indigo-100 -->
+              <stop stop-color="#ffffff" offset="100%"></stop><!-- white -->
+            </linearGradient>
+          </defs>
+          <text id="textName" x="400" y="150" text-anchor="middle" fill="url(#gradient)" filter="url(#bigglow)">Chris Johnson</text>
+          <rect x="10" y="190" width="780" height="3" fill="url(#gradient)" filter="url(#smallglow)"></rect>
+          <text id="textTitle" x="400" y="265" text-anchor="middle" fill="url(#gradient)" filter="url(#smallglow)">Interactive Front-End Developer</text>
+        </svg>
+      </h1>
+      <div id="intro-webgl-container"></div>
+    </section>
 
-  <!-- Quotes -->
-  <section id="quotes" class="portfolio-section--dark">
-    <div class="portfolio-section__inner-content">
-      <div class="rotating-content__container">
-        <div class="quote-block rotating-content__item default">
-          <p class="quote-block__content">Chris is one of the most thorough and passionate workers I know. I've worked with him on multiple projects and couldn't endorse him more for his dedication to get things done.</p>
-          <p class="quote-block__name">Brandon Jernigan</p>
-          <p class="quote-block__role">FED at Kasasa, Piqora</p>
-        </div>
-        <div class="quote-block rotating-content__item">
-          <p class="quote-block__content">A hard working self starter, Chris can take ownership of advanced projects, and see them through to completion. He has a vision focused on adding business value with his contributions, not just slogging through assigned tasks.</p>
-          <p class="quote-block__name">Chad Taylor</p>
-          <p class="quote-block__role">VP of Creative Services at Kasasa</p>
-        </div>
-        <div class="quote-block rotating-content__item">
-          <p class="quote-block__content">Chris has shown his ability on multiple occasions to demonstrate critical thinking and deep knowledge on topics like image formats, javascript, and animation. Chris is a deep thinker and would be a great addition of any team!</p>
-          <p class="quote-block__name">Jessica Tremblay</p>
-          <p class="quote-block__role">FED at IBM</p>
-        </div>
-        <!-- <div class="quote-block rotating-content__item">
-          <p class="quote-block__content">QUOTE</p>
-          <p class="quote-block__name">NAME</p>
-          <p class="quote-block__role">ROLE</p>
-        </div> -->
-        <!-- <div class="quote-block rotating-content__item">
-          <p class="quote-block__content">QUOTE</p>
-          <p class="quote-block__name">NAME</p>
-          <p class="quote-block__role">ROLE</p>
-        </div> -->
-        <button class="rotating-content__previous-button">previous quote</button>
-        <button class="rotating-content__next-button">next quote</button>
+    <!-- About -->
+    <section id="about" class="portfolio-section--light">
+      <img class="profile-headshot" src="/images/headshot.png" />
+      <div class="portfolio-section__inner-content">
+        <p class="about-content">Howdy, I&rsquo;m Chris Johnson. I create interactive experiences on the web.</p>
+        <p class="about-content">I&rsquo;m a front-end developer, with balanced emphasis on visual presentation and technical implementation.</p>
+        <p class="about-content">I&rsquo;m available for work. So if you would like some extra help making your web sites/apps more engaging, <a href="#contact">contact me</a>.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Work -->
-  <section id="work" class="portfolio-section--light">
-    <div class="portfolio-section__inner-content">
-      <h2 class="section-heading">Work Samples</h2>
-      <h3 class="section-heading__subheading">(coming soon)</h3>
-      <div class="portfolio-work__container">
-        <img class="portfolio-work__screenshot aspect-codepen" src="/images/screenshots/emerald-noise.png" />
-        <img class="portfolio-work__screenshot aspect-codepen" src="/images/screenshots/tesselation-transition.png" />
-        <img class="portfolio-work__screenshot aspect-codepen" src="/images/screenshots/delaunay.png" />
+    <!-- Quotes -->
+    <section id="quotes" class="portfolio-section--dark">
+      <div class="portfolio-section__inner-content">
+        <div class="rotating-content__container">
+          <div class="quote-block rotating-content__item default">
+            <p class="quote-block__content">Chris is one of the most thorough and passionate workers I know. I've worked with him on multiple projects and couldn't endorse him more for his dedication to get things done.</p>
+            <p class="quote-block__name">Brandon Jernigan</p>
+            <p class="quote-block__role">FED at Kasasa, Piqora</p>
+          </div>
+          <div class="quote-block rotating-content__item">
+            <p class="quote-block__content">A hard working self starter, Chris can take ownership of advanced projects, and see them through to completion. He has a vision focused on adding business value with his contributions, not just slogging through assigned tasks.</p>
+            <p class="quote-block__name">Chad Taylor</p>
+            <p class="quote-block__role">VP of Creative Services at Kasasa</p>
+          </div>
+          <div class="quote-block rotating-content__item">
+            <p class="quote-block__content">Chris has shown his ability on multiple occasions to demonstrate critical thinking and deep knowledge on topics like image formats, javascript, and animation. Chris is a deep thinker and would be a great addition of any team!</p>
+            <p class="quote-block__name">Jessica Tremblay</p>
+            <p class="quote-block__role">FED at IBM</p>
+          </div>
+          <!-- <div class="quote-block rotating-content__item">
+            <p class="quote-block__content">QUOTE</p>
+            <p class="quote-block__name">NAME</p>
+            <p class="quote-block__role">ROLE</p>
+          </div> -->
+          <!-- <div class="quote-block rotating-content__item">
+            <p class="quote-block__content">QUOTE</p>
+            <p class="quote-block__name">NAME</p>
+            <p class="quote-block__role">ROLE</p>
+          </div> -->
+          <button class="rotating-content__previous-button">previous quote</button>
+          <button class="rotating-content__next-button">next quote</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="portfolio-section--dark">
-    <div class="portfolio-section__inner-content">
-      <h2 class="section-heading">Let&rsquo;s Chat</h2>
-      <p class="contact-details"><a href="tel:+018172391309">(817) 239-1309</a></p>
-      <p class="contact-details"><a href="mailto:jhnsn.c@gmail.com">jhnsn.c@gmail.com</a></p>
-      <div class="contact-links__container">
-        <a class="contact-links__link" href="https://codepen.io/jhnsnc/" target="_blank">
-          <svg class="contact-links__logo">
-            <use xlink:href="/images/icon-sprite.svg#codepen-logo"></use>
-          </svg>
-        </a>
-        <a class="contact-links__link" href="https://github.com/jhnsnc/" target="_blank">
-          <svg class="contact-links__logo">
-            <use xlink:href="/images/icon-sprite.svg#github-logo"></use>
-          </svg>
-        </a>
-        <a class="contact-links__link" href="https://www.linkedin.com/in/jhnsnc" target="_blank">
-          <svg class="contact-links__logo">
-            <use xlink:href="/images/icon-sprite.svg#linkedin-logo"></use>
-          </svg>
-        </a>
-        <a class="contact-links__link" href="https://twitter.com/jhnsnc" target="_blank">
-          <svg class="contact-links__logo">
-            <use xlink:href="/images/icon-sprite.svg#twitter-logo"></use>
-          </svg>
-        </a>
+    <!-- Work -->
+    <section id="work" class="portfolio-section--light">
+      <div class="portfolio-section__inner-content">
+        <h2 class="section-heading">Work Samples</h2>
+        <h3 class="section-heading__subheading">(more coming soon)</h3>
+        <div class="portfolio-list__container">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="portfolio-section--dark">
+      <div class="portfolio-section__inner-content">
+        <h2 class="section-heading">Let&rsquo;s Chat</h2>
+        <p class="contact-details"><a href="tel:+018172391309">(817) 239-1309</a></p>
+        <p class="contact-details"><a href="mailto:jhnsn.c@gmail.com">jhnsn.c@gmail.com</a></p>
+        <div class="contact-links__container">
+          <a class="contact-links__link" href="https://codepen.io/jhnsnc/" target="_blank">
+            <svg class="contact-links__logo">
+              <use xlink:href="/images/icon-sprite.svg#codepen-logo"></use>
+            </svg>
+          </a>
+          <a class="contact-links__link" href="https://github.com/jhnsnc/" target="_blank">
+            <svg class="contact-links__logo">
+              <use xlink:href="/images/icon-sprite.svg#github-logo"></use>
+            </svg>
+          </a>
+          <a class="contact-links__link" href="https://www.linkedin.com/in/jhnsnc" target="_blank">
+            <svg class="contact-links__logo">
+              <use xlink:href="/images/icon-sprite.svg#linkedin-logo"></use>
+            </svg>
+          </a>
+          <a class="contact-links__link" href="https://twitter.com/jhnsnc" target="_blank">
+            <svg class="contact-links__logo">
+              <use xlink:href="/images/icon-sprite.svg#twitter-logo"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- end scrollable-overlays__normal-flow -->
+
+  <!-- for WORK section overlays -->
+  <div class="scrollable-overlays__overlay-container portfolio-details">
+  </div>
 
   <!-- scripts -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>

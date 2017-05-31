@@ -17,6 +17,7 @@ $sizeXL: 8.0rem;
   flex: 0 0 47.5%;
   margin: 0 0 2.5rem;
   overflow: hidden;
+  text-decoration: none;
   border-radius: 0.5rem;
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(mix(md-color('blue', '500'), $shadowColor, 50%), 0.2);
 
@@ -30,6 +31,9 @@ $sizeXL: 8.0rem;
       background: md-color('blue', '500');
       text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
     }
+  }
+  &:focus {
+    outline-color: md-color('purple','a100');
   }
 }
 

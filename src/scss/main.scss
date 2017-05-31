@@ -9,6 +9,7 @@
 @import 'shared/section-heading';
 @import 'shared/webgl-scene';
 @import 'shared/scrollable-overlays';
+@import 'shared/letterboxed-image';
 
 @import 'intro/intro-title';
 
@@ -20,8 +21,6 @@
 @import 'quotes/rotating-content';
 
 @import 'work/work';
-@import 'work/portfolio-work';
-@import 'shared/letterboxed-image';
 @import 'work/portfolio-list';
 @import 'work/portfolio-details';
 

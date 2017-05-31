@@ -1,10 +1,7 @@
-#work, #portfolio {
+#work {
+  height: auto;
   .section-heading {
     color: md-color('light-blue','600');
     text-shadow: 0 0 2.0rem md-color('light-blue','200');
   }
-}
-
-#portfolio { // TODO: either fully merge into main #work section or split this into a separate file
-  height: auto;
 }
