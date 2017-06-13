@@ -13,23 +13,41 @@ $sizeXL: 8.0rem;
 }
 
 .portfolio-list__item {
+  $aspectRatio: 3/4;
+
   cursor: pointer;
-  flex: 0 0 47.5%;
-  margin: 0 0 2.5rem;
+  flex: 0 0 44vw;
+  height: $aspectRatio * 44vw;
+  position: relative;
+  margin: 0 0 1.0rem;
   overflow: hidden;
   text-decoration: none;
   border-radius: 0.5rem;
-  box-shadow: 0.2rem 0.2rem 0.4rem rgba(mix(md-color('blue', '500'), $shadowColor, 50%), 0.2);
+  box-shadow: 0 0.2rem 0.8rem rgba(mix(md-color('blue', '500'), $shadowColor, 50%), 0.35);
+  transition: all 300ms;
+  transform: translateZ(0);
 
+  @include breakpoint(S) {
+    flex-basis: 260px;
+    height: $aspectRatio * 260px;
+    margin-bottom: 1.5rem;
+  }
   @include breakpoint(M) {
-    flex-basis: 30%;
+    flex-basis: 240px;
+    height: $aspectRatio * 240px;
+    margin-bottom: 1.75rem;
+  }
+  @include breakpoint(L) {
+    flex-basis: 320px;
+    height: $aspectRatio * 320px;
+    margin-bottom: 2.25rem;
   }
 
   &:hover, &:focus {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 1.8rem rgba(mix(md-color('blue', '500'), $shadowColor, 50%), 0.27);
     .portfolio-list__title {
-      color: $offwhite;
-      background: md-color('blue', '500');
-      text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
+      opacity: 1.0;
     }
   }
   &:focus {
@@ -38,72 +56,59 @@ $sizeXL: 8.0rem;
 }
 
 .portfolio-list__thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
   background: $shadowColor;
-  float: left;
-  margin-right: 0.75rem;
 
-  $aspectRatio: 3/4;
-
-  width: $sizeXS * $aspectRatio;
-  height: $sizeXS;
-
-  @include breakpoint(S) {
-    width: $sizeS * $aspectRatio;
-    height: $sizeS;
+  &:before, &:after {
+    content: ' ';
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
-  @include breakpoint(M) {
-    width: $sizeM * $aspectRatio;
-    height: $sizeM;
-  }
-  @include breakpoint(L) {
-    margin-right: 1.0rem;
-    width: $sizeL;
-    height: $sizeL;
-  }
-  @include breakpoint(XL) {
-    margin-right: 1.25rem;
-    width: $sizeXL;
-    height: $sizeXL;
-  }
-
   &:before {
-    box-shadow: none;
+    box-shadow: inset 0 1.5rem 2.5rem -1.5rem rgba($shadowColor, 0.2);
   }
   &:after {
-    box-shadow: inset -0.3rem 0 0.6rem -0.3rem rgba(mix(md-color('blue', '500'), $shadowColor, 50%), 0.3);
+    box-shadow: inset 0 -1.5rem 2.5rem -1.5rem rgba($shadowColor, 0.2);
   }
 }
 
 .portfolio-list__title {
-  height: $sizeXS;
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
   padding: 0.75rem 0.75rem;
-  color: $shadowColor;
+  color: $offwhite;
   font-family: $oswald;
-  font-size: 1.0rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.2;
-  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.0);
-  background: $offwhite;
-  transition: color 300ms, background 300ms, text-shadow 300ms;
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.7);
+  background: rgba(md-color('blue', '500'), 0.85);
+  background: linear-gradient(rgba(md-color('blue', '500'), 0.85), rgba(md-color('blue', '500'), 0.3));
+  opacity: 0.0;
+  transition: opacity 300ms;
+
 
   @include breakpoint(S) {
-    padding-top: 0.8rem;
-    font-size: 1.25rem;
-    height: $sizeS;
+    padding: 1.0rem 0.75rem;
+    font-size: 2.0rem;
   }
   @include breakpoint(M) {
-    padding-top: 1.0rem;
-    font-size: 1.65rem;
-    height: $sizeM;
+    padding: 1.0rem 1.00rem;
+    font-size: 2.4rem;
   }
   @include breakpoint(L) {
-    padding-top: 1.1rem;
-    font-size: 2.0rem;
-    height: $sizeL;
-  }
-  @include breakpoint(XL) {
-    padding-top: 1.0rem;
-    font-size: 2.4rem;
-    height: $sizeXL;
+    padding: 1.5rem 1.25rem;
+    font-size: 2.8rem;
   }
 }

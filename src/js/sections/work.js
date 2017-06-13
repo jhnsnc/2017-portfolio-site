@@ -103,20 +103,13 @@ function createPortfolioListItem(entryData) {
   listItem.classList.add('portfolio-list__item');
   listItem.setAttribute('href', '#work');
   const thumbnail = document.createElement('div');
-  thumbnail.classList.add('portfolio-list__thumbnail', 'letterboxed-image');
-  const thumbnailFill = document.createElement('div');
-  thumbnailFill.classList.add('letterboxed-image__fill');
-  thumbnailFill.style.backgroundImage = `url('${entryData.images.thumbnail}')`;
-  const thumbnailFit = document.createElement('div');
-  thumbnailFit.classList.add('letterboxed-image__fit');
-  thumbnailFit.style.backgroundImage = `url('${entryData.images.thumbnail}')`;
+  thumbnail.classList.add('portfolio-list__thumbnail');
+  thumbnail.style.backgroundImage = `url('${entryData.images.thumbnail}')`;
   const itemTitle = document.createElement('h3');
   itemTitle.classList.add('portfolio-list__title');
   itemTitle.innerText = entryData.shortTitle;
 
   // combine
-  thumbnail.appendChild(thumbnailFill);
-  thumbnail.appendChild(thumbnailFit);
   listItem.appendChild(thumbnail);
   listItem.appendChild(itemTitle);
 
