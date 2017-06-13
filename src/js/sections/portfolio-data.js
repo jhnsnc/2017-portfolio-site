@@ -178,33 +178,33 @@ export const portfolioData = [
       },
     ],
   },
-  // {
-  //   shortTitle: 'Missouri Valley FCU',
-  //   fullTitle: 'Missouri Valley FCU <span>(for BancVue)</span>',
-  //   images: {
-  //     thumbnail: require('../../images/screenshots/movfcu-thumb.jpg'),
-  //     full: require('../../images/screenshots/movfcu-full.jpg'),
-  //   },
-  //   tags: [
-  //   ],
-  //   descriptionChunks: [
-  //     {
-  //       type: 'info',
-  //       content: 'I built this site several years ago as an employee of BancVue (now Kasasa). I have not been involved with content updates or modifications, but most of the site remains as it was at launch.',
-  //     },
-  //     {
-  //       type: 'normal',
-  //       content: 'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). It had many transparent elements that were difficult to optimize. This caused me to start digging deeper on the topic of image compression / optimization, so that I can now get more quality out of smaller assets.',
-  //     },
-  //   ],
-  //   links: [
-  //     {
-  //       type: 'link',
-  //       label: 'View Archived Site',
-  //       href: 'https://movfcu.fipreview.com/',
-  //     },
-  //   ],
-  // },
+  {
+    shortTitle: 'Missouri Valley FCU',
+    fullTitle: 'Missouri Valley FCU <span>(for BancVue)</span>',
+    images: {
+      thumbnail: require('../../images/screenshots/movfcu-thumb.jpg'),
+      full: require('../../images/screenshots/movfcu-full.jpg'),
+    },
+    tags: [
+    ],
+    descriptionChunks: [
+      {
+        type: 'info',
+        content: 'I built this site several years ago as an employee of BancVue (now Kasasa). I have not been involved with content updates or modifications, but most of the site remains as it was at launch.',
+      },
+      {
+        type: 'normal',
+        content: 'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). It had many transparent elements that were difficult to optimize. This caused me to start digging deeper on the topic of image compression / optimization, so that I can now get more quality out of smaller assets.',
+      },
+    ],
+    links: [
+      {
+        type: 'link',
+        label: 'View Archived Site',
+        href: 'https://movfcu.fipreview.com/',
+      },
+    ],
+  },
   // {
   //   shortTitle: 'War of 1812',
   //   fullTitle: 'War of 1812 <span>(for Thinkport)</span>',
@@ -658,7 +658,7 @@ export const portfolioData = [
       },
       {
         type: 'normal',
-        content: 'Here are some of my experiments with the format. Some are more practical than others, but each aims to create a unique effect while remaining fully accessible. No JavaScript is used in these demos–SVG and CSS only.',
+        content: 'Here are some of my experiments with the format. Some are more practical than others, but each aims to create a unique effect while remaining fully accessible. No JavaScript is used in these demos&mdash;SVG and CSS only.',
       },
       {
         type: 'warning',
