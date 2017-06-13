@@ -603,37 +603,37 @@ export const portfolioData = [
     links: [
       {
         type: 'codepen',
-        label: '“Playful Pixies”',
+        label: '\"Playful Pixies\"',
         href: 'https://codepen.io/jhnsnc/pen/rwOGrK',
       },
       {
         type: 'codepen',
-        label: '“Springy Dots”',
+        label: '\"Springy Dots\"',
         href: 'https://codepen.io/jhnsnc/pen/PjPGZd',
       },
       {
         type: 'codepen',
-        label: '“Pastel Rays”',
+        label: '\"Pastel Rays\"',
         href: 'https://codepen.io/jhnsnc/pen/PmJggb',
       },
       {
         type: 'codepen',
-        label: '“Emerald Noise”',
+        label: '\"Emerald Noise\"',
         href: 'https://codepen.io/jhnsnc/pen/pPjqbL',
       },
       {
         type: 'codepen',
-        label: '“Sphere Pulse”',
+        label: '\"Sphere Pulse\"',
         href: 'https://codepen.io/jhnsnc/pen/BWXpGv',
       },
       {
         type: 'codepen',
-        label: '“Rainbow Pulse”',
+        label: '\"Rainbow Pulse\"',
         href: 'https://codepen.io/jhnsnc/pen/aJeNZX',
       },
       {
         type: 'codepen',
-        label: '“Orange Helix”',
+        label: '\"Orange Helix\"',
         href: 'https://codepen.io/jhnsnc/pen/dXbEoE',
       },
     ],
@@ -668,22 +668,22 @@ export const portfolioData = [
     links: [
       {
         type: 'codepen',
-        label: '“Breathe”',
+        label: '\"Breathe\"',
         href: 'https://codepen.io/jhnsnc/pen/BWQOJJ',
       },
       {
         type: 'codepen',
-        label: '“Radius”',
+        label: '\"Radius\"',
         href: 'https://codepen.io/jhnsnc/pen/qrazOQ',
       },
       {
         type: 'codepen',
-        label: '“Optimist”',
+        label: '\"Optimist\"',
         href: 'https://codepen.io/jhnsnc/pen/wJWNqB',
       },
       {
         type: 'codepen',
-        label: '“Mystique”',
+        label: '\"Mystique\"',
         href: 'https://codepen.io/jhnsnc/pen/Egyjbo',
       },
     ],
