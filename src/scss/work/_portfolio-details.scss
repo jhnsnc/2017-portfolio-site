@@ -174,6 +174,10 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
       height: 2.0rem;
     }
   }
+
+  strong {
+    font-weight: 700;
+  }
 }
 
 .portfolio-details__notification--warning {
