@@ -59,7 +59,8 @@ $sizeXL: 8.0rem;
   position: relative;
   width: 100%;
   height: 100%;
-  background: $shadowColor;
+  background: $shadowColor center center no-repeat;
+  background-size: cover;
 
   &:before, &:after {
     content: ' ';
