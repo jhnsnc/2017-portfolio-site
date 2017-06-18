@@ -61,7 +61,7 @@ export const portfolioData = [
       },
       {
         type: 'normal',
-        content: 'The solution began as a simple documentation page based on data from Open API (fka Swagger) definitions files, since that was a format nearly all service teams were comfortable with. We continued to refine the user experience and add on addition features such as sample code generation, Bluemix-related metadata, endpoint groupings, human-readable comments, etc.',
+        content: 'The solution began as a simple documentation page based on data definitions in the Open API (fka Swagger) format, because that was a format nearly all service teams were comfortable with. We continued to refine the user experience and add on additional features such as sample code generation, Bluemix-related metadata, endpoint groupings, human-readable comments, etc.',
       },
     ],
     links: [
@@ -167,7 +167,7 @@ export const portfolioData = [
       },
       {
         type: 'normal',
-        content: 'This site also shows some early indications of my focus on motion. While in retrospect I don&rsquo;t agree with all the motion decisions I made, there are many places where it improves the user experience and emphasizes the client&rsquo;s brand.',
+        content: 'This site also shows some early indications of my focus on motion. Since I finished the primary build with several days to spare, I worked with the designer to identify opportunities to make the site more engaging. Fortunately the client&rsquo;s brand valued playfulness and they welcomed the use of motion.',
       },
     ],
     links: [
@@ -190,11 +190,15 @@ export const portfolioData = [
     descriptionChunks: [
       {
         type: 'info',
-        content: 'I built this site several years ago as an employee of BancVue (now Kasasa). I have not been involved with content updates or modifications, but most of the site remains as it was at launch.',
+        content: 'I built this site several years ago as an employee of BancVue (now Kasasa). The live site has since been redesigned, but the archived version in the link below is the version of the site that I built.',
       },
       {
         type: 'normal',
-        content: 'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). It had many transparent elements that were difficult to optimize. This caused me to start digging deeper on the topic of image compression / optimization, so that I can now get more quality out of smaller assets.',
+        content: 'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). The design had many transparent elements that were difficult to optimize.',
+      },
+      {
+        type: 'normal',
+        content: 'This caused me to start digging into the topic of image optimization. I now consider image compression one of my &ldquo;pet topics&rdquo; and I love reading about new algorithms, formats, and compression techniques.',
       },
     ],
     links: [
@@ -217,7 +221,7 @@ export const portfolioData = [
   //   descriptionChunks: [
   //     {
   //       type: 'normal',
-  //       content: 'I was brought in on The War of 1812 website project as a freelance developer. The client was Thinkport (the digital side of Maryland Public Television) and the main contract was through a developer friend of mine. I was responsible for navigation and various interactives.',
+  //       content: 'I was brought in on The War of 1812 website project as a freelance developer. The client was Thinkport (the digital side of Maryland Public Television) and the main contract was through a developer friend of mine. I was responsible for navigation and various interactive modules.',
   //     },
   //     {
   //       type: 'normal',
@@ -428,43 +432,127 @@ export const portfolioData = [
   //     },
   //   ],
   // },
+  // {
+  //   shortTitle: 'Shadow of a Thought (LD30)',
+  //   fullTitle: 'Shadow of a Thought <span>(Ludum Dare 30)</span>',
+  //   images: {
+  //     thumbnail: require('../../images/screenshots/ld-30-thumb.jpg'),
+  //     full: require('../../images/screenshots/ld-30-full.jpg'),
+  //   },
+  //   tags: [
+  //   ],
+  //   descriptionChunks: [
+  //     {
+  //       type: 'info',
+  //       content: 'This game was made for the Ludum Dare 48-hour contest. This means that <u>all</u> design, code, art, music, etc were created by myself within 48 hours.',
+  //     },
+  //     {
+  //       type: 'normal',
+  //       content: 'This was my first Ludum Dare game jam. It was a great experience that got me hooked on solo game jams, but it was also a tough lesson in scoping.',
+  //     },
+  //     {
+  //       type: 'normal',
+  //       content: 'The initial game design required many times more art and coding. Luckily I was able to scope things down and meet the deadline, but details were left unpolished as a result.',
+  //     },
+  //     {
+  //       type: 'warning',
+  //       content: '<strong>Note:</strong> This game requires <strong>Flash</strong> to play. You may also wish to <strong>adjust the volume</strong> on your headset before playing.',
+  //     },
+  //   ],
+  //   links: [
+  //     {
+  //       type: 'link',
+  //       label: 'Play Now',
+  //       href: 'http://cjdevsite.com/games/ld30/',
+  //     },
+  //     {
+  //       type: 'github',
+  //       label: 'View Source',
+  //       href: 'https://github.com/jhnsnc/ld30',
+  //     },
+  //   ],
+  // },
   {
-    shortTitle: 'Shadow of a Thought (LD30)',
-    fullTitle: 'Shadow of a Thought <span>(Ludum Dare 30)</span>',
+    shortTitle: 'Ludum Dare Games',
+    fullTitle: 'Ludum Dare Game Jam Games',
     images: {
-      thumbnail: require('../../images/screenshots/ld-30-thumb.jpg'),
+      thumbnail: require('../../images/screenshots/ld-35-thumb.png'),
       full: require('../../images/screenshots/ld-30-full.jpg'),
     },
     tags: [
     ],
     descriptionChunks: [
       {
-        type: 'info',
-        content: 'This game was made for the Ludum Dare 48-hour contest. This means that <u>all</u> design, code, art, music, etc were created by myself within 48 hours.',
+        type: 'normal',
+        content: '<a href=\"https://ldjam.com/\" target=\"_blank\">Ludum Dare</a> is one of my favorite events. It is a game jam (similar to a hackathon) where participants create a game from scratch in a short amount of time. Ludum Dare happens once every 4 months, with thousands of new entries each time.',
       },
       {
         type: 'normal',
-        content: 'This was my first Ludum Dare game jam. It was a great experience that got me hooked on solo game jams, but it was also a tough lesson in scoping.',
+        content: 'For Ludum Dare, participants create all assets, design, art, code, music, etc for an original game (based on a shared theme) in one weekend. Solo participants have 48 hours and must create all assets from scratch, while group participants have 72 hours and fewer asset restrictions. I usually participate in the solo competition.',
       },
       {
         type: 'normal',
-        content: 'The initial game design required many times more art and coding. Luckily I was able to scope things down and meet the deadline, but details were left unpolished as a result.',
+        content: 'I love the Ludum Dare event because I always learn something new. The value in the practice of completing a project--no matter how small the scope--cannot be overstated. I leave each competition feeling creatively rejuvinated, ready to tackle even more ambitious creative and technical challenges.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> This game requires <strong>Flash</strong> to play. You may also wish to <strong>adjust the volume</strong> on your headset before playing.',
+        content: '<strong>Note:</strong> All of these games have music, so you may wish to <strong>adjust the volume</strong> on your computer before playing. You will need a <strong>keyboard</strong> in order to play most of these games. Additionally, the games from LD30 and LD32 also require <strong>Flash</strong> to play.',
       },
     ],
     links: [
       {
+        type: 'github',
+        label: 'LD37 Source',
+        href: 'https://github.com/jhnsnc/ld37',
+      },
+      {
         type: 'link',
-        label: 'Play Now',
-        href: 'http://cjdevsite.com/games/ld30/',
+        label: 'Play LD37 (\"Dining Zoom\")',
+        href: 'http://cjdevsite.com/games/ld37/',
       },
       {
         type: 'github',
-        label: 'View Source',
+        label: 'LD35 Source',
+        breakBefore: true,
+        href: 'https://github.com/jhnsnc/ld35',
+      },
+      {
+        type: 'link',
+        label: 'Play LD35 (\"Impulse\")',
+        href: 'http://cjdevsite.com/games/ld35/',
+      },
+      {
+        type: 'github',
+        label: 'LD34 Source',
+        breakBefore: true,
+        href: 'https://github.com/jhnsnc/ld34',
+      },
+      {
+        type: 'link',
+        label: 'Play LD34 (\"Laser Command\")',
+        href: 'http://cjdevsite.com/games/ld34/',
+      },
+      {
+        type: 'github',
+        label: 'LD32 Source',
+        breakBefore: true,
+        href: 'https://github.com/jhnsnc/ld32',
+      },
+      {
+        type: 'link',
+        label: 'Play LD32 (\"Audio Assault\")',
+        href: 'http://cjdevsite.com/games/ld32/',
+      },
+      {
+        type: 'github',
+        label: 'LD30 Source',
+        breakBefore: true,
         href: 'https://github.com/jhnsnc/ld30',
+      },
+      {
+        type: 'link',
+        label: 'Play LD30 (\"Shadow of a Thought\")',
+        href: 'http://cjdevsite.com/games/ld30/',
       },
     ],
   },
@@ -481,15 +569,15 @@ export const portfolioData = [
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'I found the art style of the &ldquo;Headlander&rdquo; (from DoubleFine and Adult Swim Games) to be particularly bold and striking. I often play around with recreating effects I see in the wild, but this time I decided to carry it through to a relatively complete state.',
+        content: 'I really enjoyed the bold art style of &ldquo;Headlander&rdquo; (from DoubleFine and Adult Swim Games). I often play around with recreating effects I see in the wild, and this is an example of one that I decided to carry through to a relatively complete state.',
       },
       {
         type: 'normal',
-        content: 'In particular, I wanted to work on choreographing elements together and pushing the limits of what I can do with SVG effects.',
+        content: 'On this animation, I wanted to focus on choreographing the overlapping effects and pushing the limits of what I can do with SVG effects.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> This animation was implemented for the latest version of Chrome. Some elements might not work quite as designed in older browsers.',
+        content: '<strong>Note:</strong> This animation was implemented for the latest version of Chrome. Some elements might not work as designed in older browsers.',
       },
     ],
     links: [
@@ -593,7 +681,7 @@ export const portfolioData = [
       },
       {
         type: 'normal',
-        content: 'Here is a collection of GLSL shader experiments I have created on Codepen in order to explore concepts/techniques like Perlin noise, mesh distortion, feedback loops, fractal noise, sineless hashing, etc.',
+        content: 'Here is a collection of GLSL shader experiments I have created on CodePen in order to explore concepts/techniques like Perlin noise, raytracing, feedback loops, fractal noise, etc.',
       },
       {
         type: 'warning',
@@ -601,6 +689,11 @@ export const portfolioData = [
       },
     ],
     links: [
+      {
+        type: 'codepen',
+        label: '\"Gloopy Spheres\"',
+        href: 'https://codepen.io/jhnsnc/pen/YQpvNN',
+      },
       {
         type: 'codepen',
         label: '\"Playful Pixies\"',

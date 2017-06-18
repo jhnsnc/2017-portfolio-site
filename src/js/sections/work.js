@@ -176,6 +176,9 @@ function createPortfolioDetailView(entryData) {
       linkIconType = 'link';
     }
     // append
+    if (linkData.breakBefore) {
+      descriptionContainer.appendChild(document.createElement('br'));
+    }
     linkItem.appendChild(createSvgIconElement(linkIconType));
     linkItem.appendChild(document.createTextNode(linkData.label));
     descriptionContainer.appendChild(linkItem);
