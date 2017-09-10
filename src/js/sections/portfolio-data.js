@@ -173,8 +173,8 @@ export const portfolioData = [
     links: [
       {
         type: 'link',
-        label: 'Live Site',
-        href: 'https://www.destinationscu.org/',
+        label: 'View Archived Site',
+        href: 'https://destinationscu.fipreview.com/',
       },
     ],
   },
