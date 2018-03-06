@@ -1,8 +1,9 @@
 import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
+export const quotesSection = document.getElementById('quotes');
+
 export function setupQuotesSection() {
-  const quotesSection = document.getElementById('quotes');
   if (!quotesSection) { return; }
 
   // cache DOM elements

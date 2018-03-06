@@ -1,8 +1,9 @@
 import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
+export const aboutSection = document.getElementById('about');
+
 export function setupAboutSection() {
-  const aboutSection = document.getElementById('about');
   if (!aboutSection) { return; }
 
   // cache DOM elements

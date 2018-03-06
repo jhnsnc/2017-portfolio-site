@@ -1,7 +1,8 @@
 import { setupWebglScene } from '../utils/webgl-scene-setup';
 
+export const errorSection = document.getElementById('error');
+
 export function setupErrorSection() {
-  const errorSection = document.getElementById('error');
   if (!errorSection) { return; }
 
   setupWebglScene({

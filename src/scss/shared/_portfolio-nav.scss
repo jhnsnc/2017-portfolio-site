@@ -27,6 +27,9 @@
   text-transform: uppercase;
   transition: 250ms all;
 
+  &.active {
+    color: md-color('purple','a100');
+  }
   &:hover, &:focus {
     color: md-color('purple','a100');
     background: rgba(black, 0.6);

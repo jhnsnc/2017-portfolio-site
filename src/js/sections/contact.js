@@ -1,8 +1,9 @@
 import fitText from '../utils/fit-text';
 import debounce from '../utils/debounce';
 
+export const contactSection = document.getElementById('contact');
+
 export function setupContactSection() {
-  const contactSection = document.getElementById('contact');
   if (!contactSection) { return; }
 
   // cache DOM elements

@@ -3,8 +3,9 @@ import debounce from '../utils/debounce';
 
 import { portfolioData } from './portfolio-data';
 
+export const workSection = document.getElementById('work');
+
 export function setupWorkSection() {
-  const workSection = document.getElementById('work');
   if (!workSection) { return; }
 
   // cache DOM elements

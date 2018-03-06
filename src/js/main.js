@@ -17,6 +17,7 @@
 
 import { showStats } from './misc/stats';
 import { showConsoleMessage } from './misc/console-message';
+import { setupActiveNav } from './misc/active-nav';
 
 import { setupIntroSection } from './sections/intro';
 import { setupAboutSection } from './sections/about';
@@ -27,6 +28,7 @@ import { setupContactSection } from './sections/contact';
 function runApp() {
   // showStats();
   showConsoleMessage();
+  setupActiveNav();
 
   setupIntroSection();
   setupAboutSection();
