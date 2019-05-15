@@ -37,7 +37,7 @@
     a {
       color: inherit;
       text-decoration: none;
-      border-bottom: 0.25rem solid rgba(md-color('grey', '900'), 0.0);
+      border-bottom: 0.25rem solid md-color('grey', '900');
       transition: color 200ms, border 200ms;
       &:hover, &:focus {
         color: md-color('purple', '300');
