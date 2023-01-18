@@ -167,7 +167,7 @@ module.exports = {
         resourceQuery: /^(?!\?root\-asset$).*/,
         type: 'asset/resource',
         generator: {
-          filename: '[path][name].[ext]',
+          filename: '[path][name][ext]',
         },
       },
       {
@@ -175,7 +175,7 @@ module.exports = {
         resourceQuery: /root-asset/,
         type: 'asset/resource',
         generator: {
-          filename: '[name].[ext]',
+          filename: '[name][ext]',
         },
       },
 

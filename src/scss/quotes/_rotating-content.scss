@@ -62,13 +62,13 @@
 .rotating-content__previous-button {
   left: 0;
   &:after {
-    content: '❮';
+    content: '\276E'; // ❮
   }
 }
 
 .rotating-content__next-button {
   right: 0;
   &:after {
-    content: '❯';
+    content: '\276F'; // ❯
   }
 }

@@ -24,12 +24,12 @@
     opacity: 0.3;
   }
   &:before {
-    content: '“';
+    content: '\201C'; // “ (ldquo)
     left: -0.28em;
     top: 0.41em;
   }
   &:after {
-    content: '”';
+    content: '\201D'; // ” (rdquo)
     left: -0.12em;
     top: 0.58em;
   }
@@ -48,7 +48,7 @@
   font-size: 3.2em;
   font-weight: 700;
   &:before {
-    content: '— ';
+    content: '\2014 '; // — (mdash)
   }
 }
 

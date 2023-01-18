@@ -100,7 +100,7 @@ $sizeXL: 8rem;
 
   &:before,
   &:after {
-    content: ' ';
+    content: '';
     z-index: 3;
     position: absolute;
     left: 0;
