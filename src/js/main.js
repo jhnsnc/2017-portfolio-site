@@ -26,7 +26,7 @@ import { setupWorkSection } from './sections/work';
 import { setupContactSection } from './sections/contact';
 
 function runApp() {
-  showStats();
+  // showStats();
   showConsoleMessage();
   setupActiveNav();
 

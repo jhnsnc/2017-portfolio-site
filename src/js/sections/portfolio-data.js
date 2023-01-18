@@ -1,3 +1,5 @@
+// TODO: split out unused items into a separate file rather than commenting them out
+
 export const portfolioData = [
   // IBM
   {
