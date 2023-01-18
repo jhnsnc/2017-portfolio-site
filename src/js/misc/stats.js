@@ -8,7 +8,7 @@ export function showStats() {
   stats.domElement.style.top = '2px';
   stats.domElement.style.zIndex = '999';
   document.body.appendChild(stats.domElement);
-  requestAnimationFrame(function updateStats(){
+  requestAnimationFrame(function updateStats() {
     stats.update();
     requestAnimationFrame(updateStats);
   });

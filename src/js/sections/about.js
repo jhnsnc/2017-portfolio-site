@@ -4,10 +4,14 @@ import debounce from '../utils/debounce';
 export const aboutSection = document.getElementById('about');
 
 export function setupAboutSection() {
-  if (!aboutSection) { return; }
+  if (!aboutSection) {
+    return;
+  }
 
   // cache DOM elements
-  const textContainer = aboutSection.querySelector('.portfolio-section__inner-content');
+  const textContainer = aboutSection.querySelector(
+    '.portfolio-section__inner-content'
+  );
 
   // define update function
   function adjustTextSize() {

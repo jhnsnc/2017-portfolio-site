@@ -3,7 +3,8 @@
 
   @include breakpoint(S) {
     &.interaction-enabled {
-      .rotating-content__previous-button, .rotating-content__next-button {
+      .rotating-content__previous-button,
+      .rotating-content__next-button {
         display: block;
       }
     }
@@ -27,13 +28,14 @@
   }
 }
 
-.rotating-content__previous-button, .rotating-content__next-button {
+.rotating-content__previous-button,
+.rotating-content__next-button {
   cursor: pointer;
   position: absolute;
-  bottom: -8.0rem;
+  bottom: -8rem;
   display: none; // shown once interaction enabled in JS
-  width: 4.0rem;
-  height: 4.0rem;
+  width: 4rem;
+  height: 4rem;
   font: 0/0 a;
   color: transparent;
   background: rgba(black, 0.15);
@@ -41,7 +43,8 @@
   border-radius: 0.5rem;
   transform: translateY(-50%);
   transition: all 200ms;
-  &:hover,&:focus {
+  &:hover,
+  &:focus {
     background: rgba(black, 0.6);
   }
   &:after {
@@ -50,9 +53,9 @@
     height: 100%;
     color: $offwhite;
     font-family: sans-serif;
-    font-size: 2.0rem;
+    font-size: 2rem;
     text-align: center;
-    line-height: 4.0rem;
+    line-height: 4rem;
   }
 }
 

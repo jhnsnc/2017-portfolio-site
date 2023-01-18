@@ -25,7 +25,11 @@
   $innerColor: md-color('purple', '800');
   $outerColor: mix(md-color('blue', '900'), #000000, 30%);
   background: mix($innerColor, $outerColor, 50%);
-  background: radial-gradient(farthest-corner at 50% 60%, $innerColor, $outerColor);
+  background: radial-gradient(
+    farthest-corner at 50% 60%,
+    $innerColor,
+    $outerColor
+  );
 }
 
 .portfolio-section__inner-content {
@@ -33,7 +37,7 @@
   flex: 0 0;
   position: relative;
   width: 94%;
-  padding: 5.0rem 0 7.0rem;
+  padding: 5rem 0 7rem;
   margin: 0 auto;
 
   @include breakpoint(S) {

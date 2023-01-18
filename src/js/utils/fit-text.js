@@ -1,6 +1,12 @@
 // Findest the largest font-size for container such that the container's targetDimension (height/width) does not exceed targetSize.
 // Bounded by minFontSize and maxFontSize, if provided.
-export default function fitText(container, targetDimension, targetSize, minFontSize, maxFontSize) {
+export default function fitText(
+  container,
+  targetDimension,
+  targetSize,
+  minFontSize,
+  maxFontSize
+) {
   let low = minFontSize || 0;
   let high = maxFontSize || 0;
   let iterations = 0;
@@ -13,9 +19,10 @@ export default function fitText(container, targetDimension, targetSize, minFontS
 
     // check if font size fits
     container.style.fontSize = `${fontSize}px`;
-    const comparisonSize = targetDimension === 'width'
-      ? container.getBoundingClientRect().width
-      : container.getBoundingClientRect().height;
+    const comparisonSize =
+      targetDimension === 'width'
+        ? container.getBoundingClientRect().width
+        : container.getBoundingClientRect().height;
     if (comparisonSize <= targetSize) {
       low = fontSize;
     } else {

@@ -4,7 +4,8 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   position: relative;
   overflow: hidden;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     content: ' ';
     z-index: 3;
     position: absolute;
@@ -21,7 +22,8 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   }
 }
 
-.letterboxed-image__fit, .letterboxed-image__fill {
+.letterboxed-image__fit,
+.letterboxed-image__fill {
   position: absolute;
   background-position: center center;
   background-repeat: no-repeat;

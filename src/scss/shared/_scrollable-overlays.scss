@@ -20,12 +20,12 @@ $overlayTransitionOutTime: 300ms;
   height: 100%;
   overflow-y: scroll;
   background: rgba(#000000, 0.7);
-  opacity: 0.0;
+  opacity: 0;
   transition: opacity $overlayTransitionOutTime;
 
   .overlay-active & {
     pointer-events: all;
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity $overlayTransitionInTime;
   }
 }

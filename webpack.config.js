@@ -1,38 +1,35 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 var dirSource = path.join(__dirname, 'src');
 var dirNodeModules = 'node_modules';
 
 // dev/prod flag
-var IS_DEV = (process.env.NODE_ENV === 'dev');
+var IS_DEV = process.env.NODE_ENV === 'dev';
 
 module.exports = {
   entry: {
     main: path.join(dirSource, 'js', 'main.js'),
-    errors: path.join(dirSource, 'js', 'error-pages.js')
+    errors: path.join(dirSource, 'js', 'error-pages.js'),
   },
+  context: dirSource,
   resolve: {
-    modules: [
-      dirNodeModules,
-      dirSource
-    ]
+    modules: [dirNodeModules, dirSource],
   },
   externals: {
     THREE: 'THREE',
-    stats: 'Stats'
+    stats: 'Stats',
   },
   plugins: [
     new webpack.DefinePlugin({
-      IS_DEV: IS_DEV
+      IS_DEV: IS_DEV,
     }),
 
     // Save CSS as separate files
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css',
-      allChunks: true,
     }),
 
     // Render index
@@ -118,71 +115,75 @@ module.exports = {
       // Babel
       {
         test: /\.js$/,
-        loader: 'babel-loader',
         exclude: /(node_modules)/,
-        options: {
-          comments: true,
-          compact: true
-        }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
 
       // GLSL shaders
       {
         test: /\.(glsl|vert|v|frag|f)$/,
-        loader: 'raw-loader'
-      },
-      {
-        test: /\.(glsl|vert|v|frag|f)$/,
-        loader: 'ify-loader'
+        use: ['glslify-loader'],
+        type: 'asset/source',
       },
 
       // CSS/SCSS
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1'
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }, // postcss-loader
+          },
+        ],
       },
       {
         test: /\.(scss|sass)$/,
-        loader: ExtractTextPlugin.extract([
+        use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               sourceMap: IS_DEV,
-            }
+            },
           },
           {
             loader: 'sass-loader',
             options: {
               sourceMap: IS_DEV,
-              includePaths: [
-                dirNodeModules,
-                dirSource
-              ],
-            }
-          }
-        ])
+            },
+          },
+        ],
       },
 
-      // images
+      // images and other stuff
       {
         test: /\.(jpe*g|png|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-          context: dirSource,
-        }
+        resourceQuery: /^(?!\?root\-asset$).*/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[path][name].[ext]',
+        },
+      },
+      {
+        test: /\.(jpe*g|png|svg|ico|json|xml)$/,
+        resourceQuery: /root-asset/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name].[ext]',
+        },
       },
 
       // HTML
       {
         test: /\.html$/,
         loader: 'html-loader',
-        options: {
-          root: '.'
-        }
       },
-    ]
-  }
+    ],
+  },
 };

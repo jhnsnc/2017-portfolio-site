@@ -1,0 +1,17 @@
+.sass-cache
+.zip
+
+design/
+dist/
+node_modules/
+
+src/misc/manifest.json
+
+package-lock.json
+package.json
+
+*.frag
+*.vert
+
+*.html
+*.ejs

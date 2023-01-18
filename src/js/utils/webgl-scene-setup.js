@@ -22,14 +22,18 @@ export function setupWebglScene(options) {
     camera = new THREE.Camera();
     camera.position.z = 1;
     scene = new THREE.Scene();
-    const geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+    const geometry = new THREE.PlaneBufferGeometry(2, 2);
 
     // shader uniforms
     uniforms = {
       iResolution: { type: 'v2', value: new THREE.Vector2() },
     };
     timer = 0.0;
-    if (options.timerType === 'cycle' && typeof !isNaN(options.timerCyclePeriod) && options.timerCyclePeriod > 0.0) {
+    if (
+      options.timerType === 'cycle' &&
+      typeof !isNaN(options.timerCyclePeriod) &&
+      options.timerCyclePeriod > 0.0
+    ) {
       uniforms.iCycleTime = { type: 'f', value: 0.0 };
       useCycleTime = true;
     } else if (options.timerType) {
@@ -43,28 +47,28 @@ export function setupWebglScene(options) {
     });
 
     // shader setup
-    const material = new THREE.ShaderMaterial( {
+    const material = new THREE.ShaderMaterial({
       uniforms,
       vertexShader: options.vertexShader,
       fragmentShader: options.fragmentShader,
-    } );
+    });
     if (options.transparent) {
       material.transparent = true;
     }
     lastUpdate = new Date().getTime();
 
     // put it together for rendering
-    scene.add( new THREE.Mesh(geometry, material) );
+    scene.add(new THREE.Mesh(geometry, material));
     renderer = new THREE.WebGLRenderer({
-      alpha: !!options.transparent
+      alpha: !!options.transparent,
     });
-    renderer.setPixelRatio( window.devicePixelRatio / 1 );
+    renderer.setPixelRatio(window.devicePixelRatio / 1);
     renderer.domElement.classList.add('webgl-scene');
-    options.container.appendChild( renderer.domElement );
+    options.container.appendChild(renderer.domElement);
 
     // event listeners
     onResize();
-    window.addEventListener( 'resize', onResize, false); // TODO: debounce me?
+    window.addEventListener('resize', onResize, false); // TODO: debounce me?
     if (options.animate) {
       // options.container.addEventListener('click', togglePause); // TODO: remove me in favor of autostart/stop
     }
@@ -72,19 +76,22 @@ export function setupWebglScene(options) {
 
   // events
   function onResize(evt) {
-    renderer.setSize( options.container.getBoundingClientRect().width, options.container.getBoundingClientRect().height );
+    renderer.setSize(
+      options.container.getBoundingClientRect().width,
+      options.container.getBoundingClientRect().height
+    );
     uniforms.iResolution.value.x = renderer.domElement.width;
     uniforms.iResolution.value.y = renderer.domElement.height;
     progressRender(0);
   }
   function tickAnimation() {
-    var currentTime = new Date().getTime()
+    var currentTime = new Date().getTime();
     var timeSinceLastUpdate = currentTime - lastUpdate;
     lastUpdate = currentTime;
     progressRender(timeSinceLastUpdate);
     // loop
     if (!isPaused) {
-      requestAnimationFrame( tickAnimation );
+      requestAnimationFrame(tickAnimation);
     }
   }
   function progressRender(timeDelta) {
@@ -100,7 +107,7 @@ export function setupWebglScene(options) {
         uniforms.iGlobalTime.value = timer;
       }
     }
-    renderer.render( scene, camera );
+    renderer.render(scene, camera);
   }
   function togglePause() {
     if (isPaused) {

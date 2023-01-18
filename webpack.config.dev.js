@@ -1,11 +1,11 @@
 var webpackConfig = require('./webpack.config');
 
-webpackConfig.devtool = 'eval';
-
-webpackConfig.output = {
-  pathinfo: true,
-  publicPath: '/',
-  filename: '[name].js'
+module.exports = {
+  ...webpackConfig,
+  mode: 'development',
+  devtool: 'eval',
+  output: {
+    filename: '[name].js',
+    clean: true,
+  },
 };
-
-module.exports = webpackConfig;

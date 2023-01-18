@@ -7,15 +7,15 @@
 
   .section-heading {
     color: $offwhite;
-    text-shadow: 0 0 2.0rem md-color('purple', '600');
+    text-shadow: 0 0 2rem md-color('purple', '600');
   }
 
   .portfolio-section__inner-content {
-    padding-bottom: 1.0rem;
-    font-size: 1.0rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
     @include breakpoint(S) {
-      padding-left: 1.0rem;
-      padding-right: 1.0rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     @include breakpoint(M) {
       padding-left: 2.5rem;
@@ -26,8 +26,8 @@
       padding-right: 7.5rem;
     }
     @include breakpoint(XL) {
-      padding-left: 10.0rem;
-      padding-right: 10.0rem;
+      padding-left: 10rem;
+      padding-right: 10rem;
     }
   }
 }

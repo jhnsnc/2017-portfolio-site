@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2.0rem 0;
+  padding: 2rem 0;
 }
 
 .contact-links__logo {
@@ -16,32 +16,33 @@
     height: 3.25rem;
   }
   @include breakpoint(M) {
-    width: 4.0rem;
-    height: 4.0rem;
+    width: 4rem;
+    height: 4rem;
   }
   @include breakpoint(L) {
-    width: 5.0rem;
-    height: 5.0rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
 .contact-links__link {
   flex: 0 0;
   text-decoration: none;
-  padding: 1.0rem;
+  padding: 1rem;
   margin: 0 0.5rem;
 
   @include breakpoint(S) {
-    margin: 0 1.0rem;
+    margin: 0 1rem;
   }
   @include breakpoint(M) {
     margin: 0 1.5rem;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     .contact-links__logo {
       transform: scale(1.2);
-      fill: md-color('purple','a100');
+      fill: md-color('purple', 'a100');
     }
   }
 }

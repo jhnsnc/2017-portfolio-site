@@ -3,7 +3,9 @@ import { setupWebglScene } from '../utils/webgl-scene-setup';
 export const introSection = document.getElementById('intro');
 
 export function setupIntroSection() {
-  if (!introSection) { return; }
+  if (!introSection) {
+    return;
+  }
 
   setupWebglScene({
     container: introSection,

@@ -7,24 +7,27 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/bluemix-maintenance-thumb.jpg'),
       full: require('../../images/screenshots/bluemix-maintenance-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'One of my first projects at IBM was creating a new "Maintenance" microservice for Bluemix that could reliably render pages with simple messages such as "down for maintenance", 4xx errors,  5xx errors, etc. Most of the work was writing the Node back-end and integrating it with the existing Bluemix infrastructure.',
+        content:
+          'One of my first projects at IBM was creating a new "Maintenance" microservice for Bluemix that could reliably render pages with simple messages such as "down for maintenance", 4xx errors,  5xx errors, etc. Most of the work was writing the Node back-end and integrating it with the existing Bluemix infrastructure.',
       },
       {
         type: 'normal',
-        content: 'Reliability was key: this microservice needed to work with the rest of the Bluemix code, but also continue running even in the case of catastrophic failure. I simplified and revised the code, removing all dependencies and features that were not strictly necessary. I then added comprehensive tests to ensure reliable operation in production.',
+        content:
+          'Reliability was key: this microservice needed to work with the rest of the Bluemix code, but also continue running even in the case of catastrophic failure. I simplified and revised the code, removing all dependencies and features that were not strictly necessary. I then added comprehensive tests to ensure reliable operation in production.',
       },
       {
         type: 'normal',
-        content: 'The microservice needed to deliver render pages worldwide as fast as possible and in 10 different languages. The previous solution had used heavy client-side JavaScript to handle translation and external stylesheets for presentation. This meant error messages could be delayed thousands of miliseconds while the multiple round-trip requests completed.',
+        content:
+          'The microservice needed to deliver render pages worldwide as fast as possible and in 10 different languages. The previous solution had used heavy client-side JavaScript to handle translation and external stylesheets for presentation. This meant error messages could be delayed thousands of miliseconds while the multiple round-trip requests completed.',
       },
       {
         type: 'normal',
-        content: 'I instead decided to translate the messages server-side, embed all assets and styles in the HTML document, and remove all client-side JavaScript. As a result, the microservice is fast and reliable, without having to compromise on the designers\' vision.',
+        content:
+          "I instead decided to translate the messages server-side, embed all assets and styles in the HTML document, and remove all client-side JavaScript. As a result, the microservice is fast and reliable, without having to compromise on the designers' vision.",
       },
     ],
     links: [
@@ -52,16 +55,17 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/bluemix-apidocs-thumb.jpg'),
       full: require('../../images/screenshots/bluemix-apidocs-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'Bluemix API Docs was created to give Bluemix-affiliated service teams a tool for creating and hosting API Documentation. That way the teams wouldn\'t have to spend time designing, implementing, and maintaining their own documentation if they didn\'t want to.',
+        content:
+          "Bluemix API Docs was created to give Bluemix-affiliated service teams a tool for creating and hosting API Documentation. That way the teams wouldn't have to spend time designing, implementing, and maintaining their own documentation if they didn't want to.",
       },
       {
         type: 'normal',
-        content: 'The solution began as a simple documentation page based on data definitions in the Open API (fka Swagger) format, because that was a format nearly all service teams were comfortable with. We continued to refine the user experience and add on additional features such as sample code generation, Bluemix-related metadata, endpoint groupings, human-readable comments, etc.',
+        content:
+          'The solution began as a simple documentation page based on data definitions in the Open API (fka Swagger) format, because that was a format nearly all service teams were comfortable with. We continued to refine the user experience and add on additional features such as sample code generation, Bluemix-related metadata, endpoint groupings, human-readable comments, etc.',
       },
     ],
     links: [
@@ -154,20 +158,22 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/destinations-cu-thumb.jpg'),
       full: require('../../images/screenshots/destinations-cu-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'info',
-        content: 'I built this site several years ago as an employee of BancVue (now Kasasa). I have not been involved with content updates or modifications, but most of the site remains as it was at launch.',
+        content:
+          'I built this site several years ago as an employee of BancVue (now Kasasa). I have not been involved with content updates or modifications, but most of the site remains as it was at launch.',
       },
       {
         type: 'normal',
-        content: 'The design for Destinations CU had interesting use of color, which varied from section to section. By working with my designer and taking advantage of SCSS, I was able to avoid code duplication without compromising on the designer&rsquo;s vision.',
+        content:
+          'The design for Destinations CU had interesting use of color, which varied from section to section. By working with my designer and taking advantage of SCSS, I was able to avoid code duplication without compromising on the designer&rsquo;s vision.',
       },
       {
         type: 'normal',
-        content: 'This site also shows some early indications of my focus on motion. Since I finished the primary build with several days to spare, I worked with the designer to identify opportunities to make the site more engaging. Fortunately the client&rsquo;s brand valued playfulness and they welcomed the use of motion.',
+        content:
+          'This site also shows some early indications of my focus on motion. Since I finished the primary build with several days to spare, I worked with the designer to identify opportunities to make the site more engaging. Fortunately the client&rsquo;s brand valued playfulness and they welcomed the use of motion.',
       },
     ],
     links: [
@@ -185,20 +191,22 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/movfcu-thumb.jpg'),
       full: require('../../images/screenshots/movfcu-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'info',
-        content: 'I built this site several years ago as an employee of BancVue (now Kasasa). The live site has since been redesigned, but the archived version in the link below is the version of the site that I built.',
+        content:
+          'I built this site several years ago as an employee of BancVue (now Kasasa). The live site has since been redesigned, but the archived version in the link below is the version of the site that I built.',
       },
       {
         type: 'normal',
-        content: 'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). The design had many transparent elements that were difficult to optimize.',
+        content:
+          'Missouri Valley was a very fast build (about 1.5 weeks instead of the normal 2-3). The design had many transparent elements that were difficult to optimize.',
       },
       {
         type: 'normal',
-        content: 'This caused me to start digging into the topic of image optimization. I now consider image compression one of my &ldquo;pet topics&rdquo; and I love reading about new algorithms, formats, and compression techniques.',
+        content:
+          'This caused me to start digging into the topic of image optimization. I now consider image compression one of my &ldquo;pet topics&rdquo; and I love reading about new algorithms, formats, and compression techniques.',
       },
     ],
     links: [
@@ -247,20 +255,22 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/saving-smith-island-thumb.jpg'),
       full: require('../../images/screenshots/saving-smith-island-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'This was my second project with Thinkport (the digital side of Maryland Public Television) through a fellow freelance developer. The client had very specific requirements for the site regarding the type of activities and device support.',
+        content:
+          'This was my second project with Thinkport (the digital side of Maryland Public Television) through a fellow freelance developer. The client had very specific requirements for the site regarding the type of activities and device support.',
       },
       {
         type: 'normal',
-        content: 'This was before the broad popularization of MVC frameworks like Sproutcore and Dojo (and later, Angular, React, etc). We ended up creating a small custom MVC framework. Working with the concepts directly was an enlightening experience and it has made approaching future frameworks like Angular much easier.',
+        content:
+          'This was before the broad popularization of MVC frameworks like Sproutcore and Dojo (and later, Angular, React, etc). We ended up creating a small custom MVC framework. Working with the concepts directly was an enlightening experience and it has made approaching future frameworks like Angular much easier.',
       },
       {
         type: 'info',
-        content: 'I was one of two freelance developers on this project. While I had a smaller share of the work, it still represents a significant amount of development work from me.',
+        content:
+          'I was one of two freelance developers on this project. While I had a smaller share of the work, it still represents a significant amount of development work from me.',
       },
     ],
     links: [
@@ -479,24 +489,27 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/ld-35-thumb.png'),
       full: require('../../images/screenshots/ld-30-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: '<a href=\"https://ldjam.com/\" target=\"_blank\">Ludum Dare</a> is one of my favorite events. It is a game jam (similar to a hackathon) where participants create a game from scratch in a short amount of time. Ludum Dare happens once every 4 months, with thousands of new entries each time.',
+        content:
+          '<a href="https://ldjam.com/" target="_blank">Ludum Dare</a> is one of my favorite events. It is a game jam (similar to a hackathon) where participants create a game from scratch in a short amount of time. Ludum Dare happens once every 4 months, with thousands of new entries each time.',
       },
       {
         type: 'normal',
-        content: 'For Ludum Dare, participants create all assets, design, art, code, music, etc for an original game (based on a shared theme) in one weekend. Solo participants have 48 hours and must create all assets from scratch, while group participants have 72 hours and fewer asset restrictions. I usually participate in the solo competition.',
+        content:
+          'For Ludum Dare, participants create all assets, design, art, code, music, etc for an original game (based on a shared theme) in one weekend. Solo participants have 48 hours and must create all assets from scratch, while group participants have 72 hours and fewer asset restrictions. I usually participate in the solo competition.',
       },
       {
         type: 'normal',
-        content: 'I love the Ludum Dare event because I always learn something new. The value in the practice of completing a project--no matter how small the scope--cannot be overstated. I leave each competition feeling creatively rejuvinated, ready to tackle even more ambitious creative and technical challenges.',
+        content:
+          'I love the Ludum Dare event because I always learn something new. The value in the practice of completing a project--no matter how small the scope--cannot be overstated. I leave each competition feeling creatively rejuvinated, ready to tackle even more ambitious creative and technical challenges.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> All of these games have music, so you may wish to <strong>adjust the volume</strong> on your computer before playing. You will need a <strong>keyboard</strong> in order to play most of these games. Additionally, the games from LD30 and LD32 also require <strong>Flash</strong> to play.',
+        content:
+          '<strong>Note:</strong> All of these games have music, so you may wish to <strong>adjust the volume</strong> on your computer before playing. You will need a <strong>keyboard</strong> in order to play most of these games. Additionally, the games from LD30 and LD32 also require <strong>Flash</strong> to play.',
       },
     ],
     links: [
@@ -507,7 +520,7 @@ export const portfolioData = [
       },
       {
         type: 'link',
-        label: 'Play LD37 (\"Dining Zoom\")',
+        label: 'Play LD37 ("Dining Zoom")',
         href: 'http://cjdevsite.com/games/ld37/',
       },
       {
@@ -518,7 +531,7 @@ export const portfolioData = [
       },
       {
         type: 'link',
-        label: 'Play LD35 (\"Impulse\")',
+        label: 'Play LD35 ("Impulse")',
         href: 'http://cjdevsite.com/games/ld35/',
       },
       {
@@ -529,7 +542,7 @@ export const portfolioData = [
       },
       {
         type: 'link',
-        label: 'Play LD34 (\"Laser Command\")',
+        label: 'Play LD34 ("Laser Command")',
         href: 'http://cjdevsite.com/games/ld34/',
       },
       {
@@ -540,7 +553,7 @@ export const portfolioData = [
       },
       {
         type: 'link',
-        label: 'Play LD32 (\"Audio Assault\")',
+        label: 'Play LD32 ("Audio Assault")',
         href: 'http://cjdevsite.com/games/ld32/',
       },
       {
@@ -551,7 +564,7 @@ export const portfolioData = [
       },
       {
         type: 'link',
-        label: 'Play LD30 (\"Shadow of a Thought\")',
+        label: 'Play LD30 ("Shadow of a Thought")',
         href: 'http://cjdevsite.com/games/ld30/',
       },
     ],
@@ -564,20 +577,22 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/headlander-thumb.png'),
       full: require('../../images/screenshots/headlander-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'I really enjoyed the bold art style of &ldquo;Headlander&rdquo; (from DoubleFine and Adult Swim Games). I often play around with recreating effects I see in the wild, and this is an example of one that I decided to carry through to a relatively complete state.',
+        content:
+          'I really enjoyed the bold art style of &ldquo;Headlander&rdquo; (from DoubleFine and Adult Swim Games). I often play around with recreating effects I see in the wild, and this is an example of one that I decided to carry through to a relatively complete state.',
       },
       {
         type: 'normal',
-        content: 'On this animation, I wanted to focus on choreographing the overlapping effects and pushing the limits of what I can do with SVG effects.',
+        content:
+          'On this animation, I wanted to focus on choreographing the overlapping effects and pushing the limits of what I can do with SVG effects.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> This animation was implemented for the latest version of Chrome. Some elements might not work as designed in older browsers.',
+        content:
+          '<strong>Note:</strong> This animation was implemented for the latest version of Chrome. Some elements might not work as designed in older browsers.',
       },
     ],
     links: [
@@ -672,61 +687,63 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/shaders-thumb.jpg'),
       full: require('../../images/screenshots/shaders-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'WebGL is becoming increasingly attractive as a technology for engaging web users in unique ways. As I see more and more sites taking advantage of the technology, I am driven to learn and experiment with it more and more.',
+        content:
+          'WebGL is becoming increasingly attractive as a technology for engaging web users in unique ways. As I see more and more sites taking advantage of the technology, I am driven to learn and experiment with it more and more.',
       },
       {
         type: 'normal',
-        content: 'Here is a collection of GLSL shader experiments I have created on CodePen in order to explore concepts/techniques like Perlin noise, raytracing, feedback loops, fractal noise, etc.',
+        content:
+          'Here is a collection of GLSL shader experiments I have created on CodePen in order to explore concepts/techniques like Perlin noise, raytracing, feedback loops, fractal noise, etc.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> These experiments will only work if your browser is enabled for WebGL. Most of them have not been optimized for older graphics cards or mobile devices, so distortion may occur especially as the shader runs over a long time.',
+        content:
+          '<strong>Note:</strong> These experiments will only work if your browser is enabled for WebGL. Most of them have not been optimized for older graphics cards or mobile devices, so distortion may occur especially as the shader runs over a long time.',
       },
     ],
     links: [
       {
         type: 'codepen',
-        label: '\"Gloopy Spheres\"',
+        label: '"Gloopy Spheres"',
         href: 'https://codepen.io/jhnsnc/pen/YQpvNN',
       },
       {
         type: 'codepen',
-        label: '\"Playful Pixies\"',
+        label: '"Playful Pixies"',
         href: 'https://codepen.io/jhnsnc/pen/rwOGrK',
       },
       {
         type: 'codepen',
-        label: '\"Springy Dots\"',
+        label: '"Springy Dots"',
         href: 'https://codepen.io/jhnsnc/pen/PjPGZd',
       },
       {
         type: 'codepen',
-        label: '\"Pastel Rays\"',
+        label: '"Pastel Rays"',
         href: 'https://codepen.io/jhnsnc/pen/PmJggb',
       },
       {
         type: 'codepen',
-        label: '\"Emerald Noise\"',
+        label: '"Emerald Noise"',
         href: 'https://codepen.io/jhnsnc/pen/pPjqbL',
       },
       {
         type: 'codepen',
-        label: '\"Sphere Pulse\"',
+        label: '"Sphere Pulse"',
         href: 'https://codepen.io/jhnsnc/pen/BWXpGv',
       },
       {
         type: 'codepen',
-        label: '\"Rainbow Pulse\"',
+        label: '"Rainbow Pulse"',
         href: 'https://codepen.io/jhnsnc/pen/aJeNZX',
       },
       {
         type: 'codepen',
-        label: '\"Orange Helix\"',
+        label: '"Orange Helix"',
         href: 'https://codepen.io/jhnsnc/pen/dXbEoE',
       },
     ],
@@ -738,45 +755,48 @@ export const portfolioData = [
       thumbnail: require('../../images/screenshots/svg-text-experiments-thumb.jpg'),
       full: require('../../images/screenshots/svg-text-experiments-full.jpg'),
     },
-    tags: [
-    ],
+    tags: [],
     descriptionChunks: [
       {
         type: 'normal',
-        content: 'Over the last few years, I have been using SVG more and more in production at work. Learning accessibility and compatibility tricks, optimizing SVGs by hand, and replacing icon fonts with SVG sprites has made me appreciate the format more.',
+        content:
+          'Over the last few years, I have been using SVG more and more in production at work. Learning accessibility and compatibility tricks, optimizing SVGs by hand, and replacing icon fonts with SVG sprites has made me appreciate the format more.',
       },
       {
         type: 'normal',
-        content: 'I began thinking about how one might use SVG in a meaningful way on the web. Eventually I came to the conclusion that fully accessible, visually-engaging text was a potentially great application for SVG.'
+        content:
+          'I began thinking about how one might use SVG in a meaningful way on the web. Eventually I came to the conclusion that fully accessible, visually-engaging text was a potentially great application for SVG.',
       },
       {
         type: 'normal',
-        content: 'Here are some of my experiments with the format. Some are more practical than others, but each aims to create a unique effect while remaining fully accessible. No JavaScript is used in these demos&mdash;SVG and CSS only.',
+        content:
+          'Here are some of my experiments with the format. Some are more practical than others, but each aims to create a unique effect while remaining fully accessible. No JavaScript is used in these demos&mdash;SVG and CSS only.',
       },
       {
         type: 'warning',
-        content: '<strong>Note:</strong> Some of these experiments use graphically-intensive effects and may render slowly or cause issues if opened at full-screen on a high-resolution display. Some demos might only work properly in Chrome.',
+        content:
+          '<strong>Note:</strong> Some of these experiments use graphically-intensive effects and may render slowly or cause issues if opened at full-screen on a high-resolution display. Some demos might only work properly in Chrome.',
       },
     ],
     links: [
       {
         type: 'codepen',
-        label: '\"Breathe\"',
+        label: '"Breathe"',
         href: 'https://codepen.io/jhnsnc/pen/BWQOJJ',
       },
       {
         type: 'codepen',
-        label: '\"Radius\"',
+        label: '"Radius"',
         href: 'https://codepen.io/jhnsnc/pen/qrazOQ',
       },
       {
         type: 'codepen',
-        label: '\"Optimist\"',
+        label: '"Optimist"',
         href: 'https://codepen.io/jhnsnc/pen/wJWNqB',
       },
       {
         type: 'codepen',
-        label: '\"Mystique\"',
+        label: '"Mystique"',
         href: 'https://codepen.io/jhnsnc/pen/Egyjbo',
       },
     ],

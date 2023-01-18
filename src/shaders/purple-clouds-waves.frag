@@ -5,8 +5,6 @@ uniform vec2 iResolution;
 
 #define PI 3.14159265359
 
-#pragma glslify: noise = require("glsl-noise/simplex/3d")
-
 // Sineless hash - Dave Hoskins ( https://www.shadertoy.com/view/4djSRW )
 // License: CC BY-SA v4.0 (this function only)
 float hash11(float p)
@@ -16,6 +14,8 @@ float hash11(float p)
   p3 += dot(p3, p3.yzx + 19.19);
   return fract((p3.x + p3.y) * p3.z);
 }
+
+// #pragma glslify: noise = require("glsl-noise/simplex/3d")
 
 // fractal clouds
 /*const int octaves = 8;

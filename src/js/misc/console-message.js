@@ -14,6 +14,8 @@ Yb, \`88       88           IP'\`Yb IP'\`Yb               888
   console.log(`
 ===========================================================
 `);
-  console.log('Thanks for taking a look at my site. Would you like to see the source code for it? Enjoy!');
+  console.log(
+    'Thanks for taking a look at my site. Would you like to see the source code for it? Enjoy!'
+  );
   console.log('https://github.com/jhnsnc/2017-portfolio-site');
 }

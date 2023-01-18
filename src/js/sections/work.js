@@ -6,12 +6,18 @@ import { portfolioData } from './portfolio-data';
 export const workSection = document.getElementById('work');
 
 export function setupWorkSection() {
-  if (!workSection) { return; }
+  if (!workSection) {
+    return;
+  }
 
   // cache DOM elements
-  const textContainer = workSection.querySelector('.portfolio-section__inner-content');
+  const textContainer = workSection.querySelector(
+    '.portfolio-section__inner-content'
+  );
   const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
-  const textSubHeadings = [...textContainer.querySelectorAll('.section-heading__subheading')];
+  const textSubHeadings = [
+    ...textContainer.querySelectorAll('.section-heading__subheading'),
+  ];
   const listContainer = workSection.querySelector('.portfolio-list__container');
   const detailsContainer = document.querySelector('.portfolio-details');
 
@@ -23,12 +29,12 @@ function setupTextAdjustment(textContainer, textHeadings, textSubHeadings) {
   // setup resize function
   function adjustTextSize() {
     const widthLimit = textContainer.getBoundingClientRect().width;
-    textHeadings.forEach(item => {
+    textHeadings.forEach((item) => {
       item.classList.add('position-absolute');
       fitText(item, 'width', widthLimit, 12, 120);
       item.classList.remove('position-absolute');
     });
-    textSubHeadings.forEach(item => {
+    textSubHeadings.forEach((item) => {
       item.classList.add('position-absolute');
       fitText(item, 'width', widthLimit, 12, 64);
       item.classList.remove('position-absolute');
@@ -53,12 +59,14 @@ function setupPortfolioEntries(listContainer, detailsContainer) {
       lastViewedEntry = undefined;
     }
     // check each entry: activate/deactivate overlay depending on if it is the target
-    portfolioEntries.forEach(entry => {
+    portfolioEntries.forEach((entry) => {
       if (target === entry.title) {
         lastViewedEntry = entry;
         document.body.classList.add('overlay-active');
         entry.detailView.classList.add('active');
-        entry.detailView.querySelector('.portfolio-details__close-button').focus();
+        entry.detailView
+          .querySelector('.portfolio-details__close-button')
+          .focus();
       } else {
         entry.detailView.classList.remove('active');
       }
@@ -66,7 +74,7 @@ function setupPortfolioEntries(listContainer, detailsContainer) {
   }
 
   // create each entry
-  portfolioData.forEach(entryData => {
+  portfolioData.forEach((entryData) => {
     const newEntry = {
       title: entryData.shortTitle,
       listItem: createPortfolioListItem(entryData),
@@ -84,14 +92,16 @@ function setupPortfolioEntries(listContainer, detailsContainer) {
       evt.preventDefault();
       showPortfolioDetails(newEntry.title);
     });
-    newEntry.detailView.querySelector('.portfolio-details__close-button').addEventListener('click', (evt) => {
-      evt.preventDefault();
-      showPortfolioDetails(undefined);
-    });
+    newEntry.detailView
+      .querySelector('.portfolio-details__close-button')
+      .addEventListener('click', (evt) => {
+        evt.preventDefault();
+        showPortfolioDetails(undefined);
+      });
   });
 
   // add events
-  detailsContainer.addEventListener('click', evt => {
+  detailsContainer.addEventListener('click', (evt) => {
     if (evt.target === detailsContainer) {
       showPortfolioDetails(undefined);
     }
@@ -129,7 +139,10 @@ function createPortfolioDetailView(entryData) {
   closeButton.innerHTML = '&times;';
   closeButton.setAttribute('href', '#');
   const screenshot = document.createElement('div');
-  screenshot.classList.add('portfolio-details__screenshot', 'letterboxed-image');
+  screenshot.classList.add(
+    'portfolio-details__screenshot',
+    'letterboxed-image'
+  );
   const screenshotFill = document.createElement('div');
   screenshotFill.classList.add('letterboxed-image__fill');
   screenshotFill.style.backgroundImage = `url('${entryData.images.full}')`;
@@ -140,28 +153,34 @@ function createPortfolioDetailView(entryData) {
   descriptionContainer.classList.add('portfolio-details__information');
 
   // add description content
-  entryData.descriptionChunks.forEach(descriptionChunk => {
+  entryData.descriptionChunks.forEach((descriptionChunk) => {
     const descriptionItem = document.createElement('p');
     let iconId;
     if (descriptionChunk.type === 'info') {
       iconId = 'info';
-      descriptionItem.classList.add('portfolio-details__notification--information');
+      descriptionItem.classList.add(
+        'portfolio-details__notification--information'
+      );
     } else if (descriptionChunk.type === 'warning') {
       iconId = 'warning';
       descriptionItem.classList.add('portfolio-details__notification--warning');
-    } else { // normal
+    } else {
+      // normal
       descriptionItem.classList.add('portfolio-details__description');
     }
     descriptionItem.innerHTML = descriptionChunk.content;
     // append
     if (iconId) {
-      descriptionItem.insertBefore(createSvgIconElement(iconId), descriptionItem.firstChild);
+      descriptionItem.insertBefore(
+        createSvgIconElement(iconId),
+        descriptionItem.firstChild
+      );
     }
     descriptionContainer.appendChild(descriptionItem);
   });
 
   // add links
-  entryData.links.forEach(linkData => {
+  entryData.links.forEach((linkData) => {
     // create link
     const linkItem = document.createElement('a');
     linkItem.classList.add('portfolio-details__link');
@@ -197,10 +216,20 @@ function createPortfolioDetailView(entryData) {
 }
 
 function createSvgIconElement(iconId) {
-  const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  const svgElement = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'svg'
+  );
   svgElement.classList.add('icon');
-  const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${require('images/icon-sprite.svg')}#${iconId}`);
+  const useElement = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'use'
+  );
+  useElement.setAttributeNS(
+    'http://www.w3.org/1999/xlink',
+    'xlink:href',
+    `${require('images/icon-sprite.svg')}#${iconId}`
+  );
   svgElement.appendChild(useElement);
 
   return svgElement;

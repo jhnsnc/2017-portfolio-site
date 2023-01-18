@@ -25,19 +25,24 @@ body {
  > Mixins
 =========================*/
 
-$breakpoints: ( // smaller = "mobile", no @media
-  'S':  600px, // "tablet", "mobile" landscape
-  'M':  900px, // "tablet" landscape, "laptop"
-  'L':  1200px, // "desktop", HD 720p
-  'XL': 1800px  // "desktop", HD 1080p
+$breakpoints: (
+  // smaller = "mobile", no @media
+  'S': 600px,
+  // "tablet", "mobile" landscape
+  'M': 900px,
+  // "tablet" landscape, "laptop"
+  'L': 1200px,
+  // "desktop", HD 720p
+  'XL': 1800px // "desktop", HD 1080p
 );
 
 @mixin breakpoint($size) {
   $size-breakpoint: map-get($breakpoints, $size);
   @if $size-breakpoint != null {
-    @media (min-width: $size-breakpoint) { @content; }
-  }
-  @else {
+    @media (min-width: $size-breakpoint) {
+      @content;
+    }
+  } @else {
     @warn "#{$size} is not defined as a breakpoint. See declaration of breakpoint values in globals.";
   }
 }

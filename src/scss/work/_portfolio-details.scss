@@ -1,7 +1,9 @@
+@use 'sass:math';
+
 $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
 
 .portfolio-details {
-  padding: 2.0rem 0;
+  padding: 2rem 0;
   background: rgba($blackoutColor, 0.8);
 }
 
@@ -14,7 +16,7 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   margin: 0 auto;
   overflow: hidden;
   background: $offwhite;
-  box-shadow: 0 0.1rem 1.0rem rgba($blackoutColor, 0.6);
+  box-shadow: 0 0.1rem 1rem rgba($blackoutColor, 0.6);
   border-radius: 0.75rem;
 
   @include breakpoint(S) {
@@ -39,14 +41,15 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
 // title
 
 .portfolio-details__title {
-  padding: 1.0rem 5.2rem 1.0rem 1.5rem;
+  padding: 1rem 5.2rem 1rem 1.5rem;
   margin: 0;
   color: $offwhite;
   font-size: 2.2rem;
   font-family: $oswald;
   font-weight: 700;
-  line-height: 1.0;
-  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
+  line-height: 1;
+  text-shadow: 0.1rem 0.1rem 0.3rem
+    rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
   background: md-color('blue', '500');
 
   @include breakpoint(S) {
@@ -61,7 +64,7 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
     font-weight: 300;
 
     @include breakpoint(S) {
-      font-size: 2.0rem;
+      font-size: 2rem;
     }
     @include breakpoint(M) {
       font-size: 2.4rem;
@@ -84,12 +87,14 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   line-height: 4.7rem;
   text-align: center;
   text-decoration: none;
-  text-shadow: 0.1rem 0.1rem 0.3rem rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
-  background: rgba(#000000, 0.0);
+  text-shadow: 0.1rem 0.1rem 0.3rem
+    rgba(mix(md-color('blue', '500'), $blackoutColor, 50%), 0.5);
+  background: rgba(#000000, 0);
   transition: background 200ms;
   outline: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: rgba(#000000, 0.6);
   }
 }
@@ -99,20 +104,20 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
 .portfolio-details__screenshot {
   background: $blackoutColor;
 
-  $screenshotAspect: 10/4;
-  height: 94vw / $screenshotAspect;
+  $screenshotAspect: math.div(10, 4);
+  height: math.div(94vw, $screenshotAspect);
 
   @include breakpoint(S) {
-    height: 560px / $screenshotAspect;
+    height: math.div(560px, $screenshotAspect);
   }
   @include breakpoint(M) {
-    height: 800px / $screenshotAspect;
+    height: math.div(800px, $screenshotAspect);
   }
   @include breakpoint(L) {
-    height: 1000px / $screenshotAspect;
+    height: math.div(1000px, $screenshotAspect);
   }
   @include breakpoint(XL) {
-    height: 1400px / $screenshotAspect;
+    height: math.div(1400px, $screenshotAspect);
   }
 }
 
@@ -127,16 +132,16 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
   font-weight: 400;
 
   @include breakpoint(M) {
-    padding-left: 2.0rem;
-    padding-right: 2.0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   @include breakpoint(L) {
-    padding-left: 6.0rem;
-    padding-right: 6.0rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
   @include breakpoint(XL) {
-    padding-left: 12.0rem;
-    padding-right: 12.0rem;
+    padding-left: 12rem;
+    padding-right: 12rem;
   }
 }
 
@@ -147,15 +152,15 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
 
 .portfolio-details__notification {
   position: relative;
-  padding: 0.75rem 1.0rem 0.75rem 3.0rem;
+  padding: 0.75rem 1rem 0.75rem 3rem;
   margin: 0 0 1.5rem;
   line-height: 1.4;
   background: md-color('blue', '100');
   border-radius: 0.75rem;
-  box-shadow: inset 0 0 1.0rem rgba(md-color('blue', '300'), 0.4);
+  box-shadow: inset 0 0 1rem rgba(md-color('blue', '300'), 0.4);
 
   @include breakpoint(S) {
-    padding-left: 4.0rem;
+    padding-left: 4rem;
   }
 
   .icon {
@@ -170,8 +175,8 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
     @include breakpoint(S) {
       left: 2.2rem;
       top: 2.2rem;
-      width: 2.0rem;
-      height: 2.0rem;
+      width: 2rem;
+      height: 2rem;
     }
   }
 
@@ -192,26 +197,30 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
 
   position: relative;
   display: inline-block;
-  padding: 0.75rem 1.0rem 0.75rem 2.5rem;
-  margin: 0.5rem 1.5rem 1.0rem 0;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  margin: 0.5rem 1.5rem 1rem 0;
   color: $offwhite;
   font-family: $oswald;
   font-size: 1.2rem;
   font-weight: 300;
   text-decoration: none;
   letter-spacing: 0.05rem;
-  text-shadow: 0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
+  text-shadow: 0.1rem 0.1rem 0.15rem
+    rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
   background: $buttonColor;
   border-radius: 0.3rem;
-  box-shadow: 0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
+  box-shadow: 0.1rem 0.1rem 0.15rem
+    rgba(mix($buttonColor, $blackoutColor, 50%), 0.2);
   transition: all 200ms;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: mix($buttonColor, $offwhite, 50%);
     transform: translateY(-0.06rem);
-    box-shadow: 0.1em 0.1em 0.4em rgba(mix($buttonColor, $blackoutColor, 50%), 0.5);
+    box-shadow: 0.1em 0.1em 0.4em
+      rgba(mix($buttonColor, $blackoutColor, 50%), 0.5);
   }
   &:focus {
-    outline-color: md-color('purple','a100');
+    outline-color: md-color('purple', 'a100');
   }
   .icon {
     position: absolute;
@@ -221,6 +230,8 @@ $blackoutColor: mix(md-color('blue', '900'), #000000, 30%);
     height: 1.2rem;
     transform: translate(-50%, -50%);
     fill: $offwhite;
-    filter: drop-shadow(0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2));
+    filter: drop-shadow(
+      0.1rem 0.1rem 0.15rem rgba(mix($buttonColor, $blackoutColor, 50%), 0.2)
+    );
   }
 }

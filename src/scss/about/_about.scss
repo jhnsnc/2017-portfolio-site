@@ -1,20 +1,20 @@
 #about {
   .section-heading {
-    color: md-color('pink','600');
-    text-shadow: 0 0 2.0rem md-color('pink','200');
+    color: md-color('pink', '600');
+    text-shadow: 0 0 2rem md-color('pink', '200');
   }
 
   .portfolio-section__inner-content {
-    padding-top: 8.0rem;
-    padding-bottom: 4.0rem;
-    font-size: 1.0rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    font-size: 1rem;
     @include breakpoint(S) {
-      padding-left: 0.0rem;
+      padding-left: 0rem;
     }
     @include breakpoint(M) {
       width: 65%;
-      padding-top: 12.0rem;
-      padding-bottom: 8.0rem;
+      padding-top: 12rem;
+      padding-bottom: 8rem;
       padding-right: 2.5rem;
       margin-left: auto;
       margin-right: 0;
@@ -23,14 +23,14 @@
       padding-right: 7.5rem;
     }
     @include breakpoint(XL) {
-      padding-right: 10.0rem;
+      padding-right: 10rem;
     }
   }
   .about-content {
-    padding: 0 0 2.0em;
+    padding: 0 0 2em;
     margin: 0;
     font-family: $body;
-    font-size: 2.0em;
+    font-size: 2em;
     font-weight: 400;
     line-height: 1.4;
 
@@ -39,7 +39,8 @@
       text-decoration: none;
       border-bottom: 0.25rem solid md-color('grey', '900');
       transition: color 200ms, border 200ms;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: md-color('purple', '300');
         border-bottom: 0.25rem solid md-color('purple', '300');
       }

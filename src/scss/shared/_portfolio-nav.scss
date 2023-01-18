@@ -9,10 +9,14 @@
   width: 100%;
   padding: 0 10%;
   background: rgba(black, 0.3);
-  background: linear-gradient(rgba(black, 0.35), rgba(black, 0.25), rgba(black, 0.35));
+  background: linear-gradient(
+    rgba(black, 0.35),
+    rgba(black, 0.25),
+    rgba(black, 0.35)
+  );
   border-top: 2px solid $offwhite;
   border-bottom: 2px solid $offwhite;
-  box-shadow: 0 0 1.0rem rgba(black, 0.4);
+  box-shadow: 0 0 1rem rgba(black, 0.4);
 }
 
 .portfolio-nav__link {
@@ -28,13 +32,14 @@
   transition: 250ms all;
 
   &.active {
-    color: md-color('purple','a100');
+    color: md-color('purple', 'a100');
   }
-  &:hover, &:focus {
-    color: md-color('purple','a100');
+  &:hover,
+  &:focus {
+    color: md-color('purple', 'a100');
     background: rgba(black, 0.6);
   }
   &:focus {
-    outline-color: md-color('purple','a100');
+    outline-color: md-color('purple', 'a100');
   }
 }
