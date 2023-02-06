@@ -1,4 +1,4 @@
-.portfolio-section {
+.section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,8 +10,8 @@
   overflow: hidden;
 }
 
-.portfolio-section--light {
-  @extend .portfolio-section;
+.section--light {
+  @extend .section;
   color: md-color('grey', '900');
   $innerColor: $offwhite;
   $outerColor: md-color('indigo', '100');
@@ -19,8 +19,8 @@
   background: radial-gradient(at 50% 60%, $innerColor, $outerColor);
 }
 
-.portfolio-section--dark {
-  @extend .portfolio-section;
+.section--dark {
+  @extend .section;
   color: $offwhite;
   $innerColor: md-color('purple', '800');
   $outerColor: mix(md-color('blue', '900'), #000000, 30%);
@@ -32,7 +32,7 @@
   );
 }
 
-.portfolio-section__inner-content {
+.section__inner-content {
   z-index: 2;
   flex: 0 0;
   position: relative;

@@ -1,5 +1,5 @@
 import fitText from '../utils/fit-text';
-import debounce from '../utils/debounce';
+import handleResize from '../utils/resize';
 
 export const aboutSection = document.getElementById('about');
 
@@ -8,18 +8,10 @@ export function setupAboutSection() {
     return;
   }
 
-  // cache DOM elements
-  const textContainer = aboutSection.querySelector(
-    '.portfolio-section__inner-content'
-  );
+  const textContainer = aboutSection.querySelector('.section__inner-content');
 
-  // define update function
-  function adjustTextSize() {
+  handleResize(function adjustTextSize() {
     const heightLimit = aboutSection.getBoundingClientRect().height;
     fitText(textContainer, 'height', heightLimit, 6, 30);
-  }
-
-  // run once, run again on resize
-  window.addEventListener('resize', debounce(adjustTextSize, 100));
-  setTimeout(adjustTextSize, 10);
+  });
 }

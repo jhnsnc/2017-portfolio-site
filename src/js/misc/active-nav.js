@@ -10,7 +10,7 @@ let navLinks;
 let sections;
 
 export function setupActiveNav() {
-  navLinks = [...document.querySelectorAll('.portfolio-nav__link')];
+  navLinks = [...document.querySelectorAll('.site-nav__link')];
   sections = [
     introSection,
     aboutSection,

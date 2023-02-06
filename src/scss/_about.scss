@@ -4,7 +4,7 @@
     text-shadow: 0 0 2rem md-color('pink', '200');
   }
 
-  .portfolio-section__inner-content {
+  .section__inner-content {
     padding-top: 8rem;
     padding-bottom: 4rem;
     font-size: 1rem;
@@ -45,5 +45,25 @@
         border-bottom: 0.25rem solid md-color('purple', '300');
       }
     }
+  }
+}
+
+//////////////////////////////////////////////////
+// Profile Headshot
+//////////////////////////////////////////////////
+
+.profile-headshot {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: none;
+  width: 40%;
+  max-width: 50vh;
+  filter: drop-shadow(6px -6px 36px rgba(md-color('indigo', '200'), 0.54));
+  opacity: 0.84;
+
+  @include breakpoint(M) {
+    display: block;
   }
 }

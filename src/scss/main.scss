@@ -4,26 +4,15 @@
 @import 'shared/colors';
 @import 'shared/variables';
 
-@import 'shared/portfolio-nav';
-@import 'shared/portfolio-section';
+@import 'shared/site-nav';
+@import 'shared/section';
 @import 'shared/section-heading';
 @import 'shared/webgl-scene';
 @import 'shared/scrollable-overlays';
 @import 'shared/letterboxed-image';
 
-@import 'intro/intro-title';
-
-@import 'about/about';
-@import 'about/profile-headshot';
-
-@import 'quotes/quotes';
-@import 'quotes/quote-block';
-@import 'quotes/rotating-content';
-
-@import 'work/work';
-@import 'work/portfolio-list';
-@import 'work/portfolio-details';
-
-@import 'contact/contact';
-@import 'contact/contact-details';
-@import 'contact/contact-links';
+@import 'intro';
+@import 'about';
+@import 'quotes';
+@import 'work';
+@import 'contact';

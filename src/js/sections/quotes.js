@@ -1,5 +1,5 @@
 import fitText from '../utils/fit-text';
-import debounce from '../utils/debounce';
+import handleResize from '../utils/resize';
 
 export const quotesSection = document.getElementById('quotes');
 
@@ -9,9 +9,7 @@ export function setupQuotesSection() {
   }
 
   // cache DOM elements
-  const textContainer = quotesSection.querySelector(
-    '.portfolio-section__inner-content'
-  );
+  const textContainer = quotesSection.querySelector('.section__inner-content');
   const rotatingContentContainer = quotesSection.querySelector(
     '.rotating-content__container'
   );
@@ -25,23 +23,18 @@ export function setupQuotesSection() {
     ...rotatingContentContainer.querySelectorAll('.rotating-content__item'),
   ];
 
-  setupTextAdjustment(
-    rotatingContentContainer,
-    quotesSection,
-    textContainer,
-    quoteItems
-  );
-  setupRotatingContent(rotatingContentContainer, btnPrev, btnNext, quoteItems);
-}
-
-function setupTextAdjustment(
-  rotatingContentContainer,
-  quotesSection,
-  textContainer,
-  quoteItems
-) {
-  // define update function
-  function adjustQuoteAreaHeight() {
+  // size adjustment
+  handleResize(function adjustTextSize() {
+    // adjust text sizing
+    const containerStyles = getComputedStyle(textContainer);
+    const heightLimit = Math.min(
+      quotesSection.getBoundingClientRect().height -
+        parseInt(containerStyles.paddingTop, 10) -
+        parseInt(containerStyles.paddingBottom, 10),
+      (textContainer.getBoundingClientRect().width * 9) / 16
+    );
+    quoteItems.forEach((item) => fitText(item, 'height', heightLimit, 6, 24));
+    // adjust quote area height
     if (window.innerWidth < 600) {
       rotatingContentContainer.style.height = 'auto';
     } else {
@@ -54,22 +47,10 @@ function setupTextAdjustment(
       });
       rotatingContentContainer.style.height = `${largestHeight}px`;
     }
-  }
-  function adjustTextSize() {
-    const containerStyles = getComputedStyle(textContainer);
-    const heightLimit = Math.min(
-      quotesSection.getBoundingClientRect().height -
-        parseInt(containerStyles.paddingTop, 10) -
-        parseInt(containerStyles.paddingBottom, 10),
-      (textContainer.getBoundingClientRect().width * 9) / 16
-    );
-    quoteItems.forEach((item) => fitText(item, 'height', heightLimit, 6, 24));
-    adjustQuoteAreaHeight();
-  }
+  });
 
-  // run once, run again on resize
-  window.addEventListener('resize', debounce(adjustTextSize, 100));
-  setTimeout(adjustTextSize, 10);
+  // cycle content
+  setupRotatingContent(rotatingContentContainer, btnPrev, btnNext, quoteItems);
 }
 
 function setupRotatingContent(

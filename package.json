@@ -7,6 +7,8 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "crel": "^4.2.1",
+    "crelns": "^1.1.1",
     "reset.css": "^2.0.2"
   },
   "devDependencies": {

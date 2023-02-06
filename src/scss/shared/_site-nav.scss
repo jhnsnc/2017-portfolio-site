@@ -1,4 +1,4 @@
-.portfolio-nav {
+.site-nav {
   z-index: 11;
   position: fixed;
   top: 0;
@@ -19,7 +19,7 @@
   box-shadow: 0 0 1rem rgba(black, 0.4);
 }
 
-.portfolio-nav__link {
+.site-nav__link {
   flex: 1 0;
   padding: 1rem;
   color: $offwhite;
