@@ -226,8 +226,8 @@ export const portfolioData = [
     shortTitle: 'WebGL Experiments',
     title: 'WebGL Shader Experiments on CodePen',
     images: {
-      thumbnail: require('../../images/screenshots/shaders-thumb.jpg'), // TODO: update
-      full: require('../../images/screenshots/shaders-full.jpg'), // TODO: update
+      thumbnail: require('../../images/screenshots/shaders-thumb.jpg'),
+      full: require('../../images/screenshots/shader-experiments-full.jpg'),
     },
     descriptionChunks: [
       'WebGL is becoming increasingly attractive as a technology for engaging web users in unique ways. As I see more and more sites taking advantage of the technology, I am driven to learn and experiment with it more and more.',
@@ -241,8 +241,23 @@ export const portfolioData = [
     links: [
       {
         type: 'codepen',
-        label: 'Interactive Ripple',
-        href: 'https://codepen.io/jhnsnc/details/ExWKzRz',
+        label: 'Text Displacement Shader',
+        href: 'https://codepen.io/jhnsnc/details/YrpRbe',
+      },
+      {
+        type: 'codepen',
+        label: 'Gloopy Spheres',
+        href: 'https://codepen.io/jhnsnc/details/YQpvNN',
+      },
+      {
+        type: 'codepen',
+        label: 'Magic Circle of the First Order',
+        href: 'https://codepen.io/jhnsnc/details/BxRWBZ',
+      },
+      {
+        type: 'codepen',
+        label: 'Heart Beats 💓',
+        href: 'https://codepen.io/jhnsnc/details/Kvayyv',
       },
       {
         type: 'codepen',
@@ -261,28 +276,13 @@ export const portfolioData = [
       },
       {
         type: 'codepen',
-        label: 'Text Displacement Shader',
-        href: 'https://codepen.io/jhnsnc/details/YrpRbe',
-      },
-      {
-        type: 'codepen',
-        label: 'Magic Circle of the First Order',
-        href: 'https://codepen.io/jhnsnc/details/BxRWBZ',
-      },
-      {
-        type: 'codepen',
-        label: 'Gloopy Spheres',
-        href: 'https://codepen.io/jhnsnc/details/YQpvNN',
+        label: 'Interactive Ripple',
+        href: 'https://codepen.io/jhnsnc/details/ExWKzRz',
       },
       {
         type: 'codepen',
         label: 'Toon Fire Effect Breakdown',
         href: 'https://codepen.io/jhnsnc/details/bRWwgX',
-      },
-      {
-        type: 'codepen',
-        label: 'Heart Beats 💓',
-        href: 'https://codepen.io/jhnsnc/details/Kvayyv',
       },
     ],
   },
@@ -290,8 +290,8 @@ export const portfolioData = [
     shortTitle: 'SVG Experiments',
     title: 'SVG Experiments on CodePen',
     images: {
-      thumbnail: require('../../images/screenshots/svg-text-experiments-thumb.jpg'), // TODO: update
-      full: require('../../images/screenshots/svg-text-experiments-full.jpg'), // TODO: update
+      thumbnail: require('../../images/screenshots/svg-experiments-thumb.jpg'),
+      full: require('../../images/screenshots/svg-experiments-full.jpg'),
     },
     descriptionChunks: [
       'SVG is an interesting format that can be used to allow for a unique combination of accessibility, technical flexibility, and visual interest.',
@@ -316,13 +316,13 @@ export const portfolioData = [
       },
       {
         type: 'codepen',
-        label: 'Text Effect - Radius',
-        href: 'https://codepen.io/jhnsnc/details/qrazOQ',
+        label: 'Text Effect - Optimist',
+        href: 'https://codepen.io/jhnsnc/details/wJWNqB',
       },
       {
         type: 'codepen',
-        label: 'Text Effect - Optimist',
-        href: 'https://codepen.io/jhnsnc/details/wJWNqB',
+        label: 'Text Effect - Radius',
+        href: 'https://codepen.io/jhnsnc/details/qrazOQ',
       },
       {
         type: 'codepen',
@@ -350,8 +350,8 @@ export const portfolioData = [
     shortTitle: 'Miscellaneous Experiments',
     title: 'Other Experiments on CodePen',
     images: {
-      thumbnail: require('../../images/screenshots/headlander-thumb.png'), // TODO: update
-      full: require('../../images/screenshots/headlander-full.jpg'), // TODO: update
+      thumbnail: require('../../images/screenshots/other-experiments-thumb-2.jpg'),
+      full: require('../../images/screenshots/other-experiments-full.jpg'),
     },
     descriptionChunks: [
       "Here is a collection of miscellaneous public demos I have created on CodePen over several years. I often use CodePen privately to experiment with ideas or reproduce bugs I'm working on, and sometimes I create a more polished public demo to share a technique or just for fun.",
