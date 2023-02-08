@@ -14,40 +14,23 @@
 //////////////////////////////////////////////////
 
 .portfolio-list__container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80vw, 1fr));
+  justify-items: center;
   justify-content: space-around;
-}
+  gap: 1rem;
 
-.portfolio-list__info {
-  position: relative;
-  max-width: 1200px;
-  padding: 0.75rem 1rem 0.75rem 1rem;
-  margin: 0 0 1.5rem;
-  font-size: 1.2rem;
-  font-family: $body;
-  font-weight: 400;
-  line-height: 1.4;
-  background: md-color('blue', '100');
-  border-radius: 0.75rem;
-  box-shadow: inset 0 0 1rem rgba(md-color('blue', '300'), 0.4);
-
+  @include breakpoint(S) {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
   @include breakpoint(M) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.75rem;
   }
   @include breakpoint(L) {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-  @include breakpoint(XL) {
-    padding-left: 12rem;
-    padding-right: 12rem;
-  }
-
-  strong {
-    font-weight: 700;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.25rem;
   }
 }
 
@@ -55,8 +38,9 @@
   $aspectRatio: math.div(3, 4);
 
   cursor: pointer;
-  flex: 0 0 44vw;
-  height: $aspectRatio * 44vw;
+  flex: 0 0 80vw;
+  width: 80vw;
+  height: $aspectRatio * 80vw;
   position: relative;
   margin: 0 0 1rem;
   overflow: hidden;
@@ -68,19 +52,16 @@
   transform: translateZ(0);
 
   @include breakpoint(S) {
-    flex-basis: 260px;
+    width: 260px;
     height: $aspectRatio * 260px;
-    margin-bottom: 1.5rem;
   }
   @include breakpoint(M) {
-    flex-basis: 240px;
+    width: 240px;
     height: $aspectRatio * 240px;
-    margin-bottom: 1.75rem;
   }
   @include breakpoint(L) {
-    flex-basis: 320px;
+    width: 320px;
     height: $aspectRatio * 320px;
-    margin-bottom: 2.25rem;
   }
 
   &:hover,
