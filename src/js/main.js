@@ -14,6 +14,7 @@ require('misc/safari-pinned-tab.svg?root-asset');
 require('misc/apple-touch-icon.png?root-asset');
 require('misc/browserconfig.xml?root-asset');
 require('misc/mstile-150x150.png?root-asset');
+require('images/headshot.png');
 
 import { showStats } from './misc/stats';
 import { showConsoleMessage } from './misc/console-message';

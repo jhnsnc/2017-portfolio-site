@@ -9,16 +9,16 @@ export function setupContactSection() {
   }
 
   const textContainer = contactSection.querySelector('.section__inner-content');
-  const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
+  const sectionHeading = textContainer.querySelector('.section-heading');
   const textDetails = [...textContainer.querySelectorAll('.contact-details')];
 
   handleResize(function adjustTextSize() {
     const widthLimit = textContainer.getBoundingClientRect().width;
-    textHeadings.forEach((item) => {
-      item.classList.add('position-absolute');
-      fitText(item, 'width', widthLimit, 12, 120);
-      item.classList.remove('position-absolute');
-    });
+
+    sectionHeading.classList.add('position-absolute');
+    fitText(sectionHeading, 'width', widthLimit, 12, 120);
+    sectionHeading.classList.remove('position-absolute');
+
     textDetails.forEach((item) => {
       item.classList.add('position-absolute');
       fitText(item, 'width', widthLimit, 12, 64);

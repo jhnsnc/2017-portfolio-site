@@ -15,18 +15,16 @@ export function setupWorkSection() {
 
   // cache DOM elements
   const textContainer = workSection.querySelector('.section__inner-content');
-  const textHeadings = [...textContainer.querySelectorAll('.section-heading')];
+  const sectionHeading = textContainer.querySelector('.section-heading');
   const listContainer = workSection.querySelector('.portfolio-list__container');
   const detailsContainer = document.querySelector('.portfolio-details');
 
   // size adjustment
   handleResize(function adjustTextSize() {
     const widthLimit = textContainer.getBoundingClientRect().width;
-    textHeadings.forEach((item) => {
-      item.classList.add('position-absolute');
-      fitText(item, 'width', widthLimit, 12, 120);
-      item.classList.remove('position-absolute');
-    });
+    sectionHeading.classList.add('position-absolute');
+    fitText(sectionHeading, 'width', widthLimit, 12, 120);
+    sectionHeading.classList.remove('position-absolute');
   });
 
   // setup dynamic content from data
@@ -142,7 +140,7 @@ function createPortfolioDetailView(entryData) {
   // prepare links content
   const linkIconLookup = {
     github: 'github-logo',
-    copepen: 'codepen-logo',
+    codepen: 'codepen-logo',
     link: 'link',
   };
   const linksContent = entryData.links.map((linkData) =>
